@@ -1,0 +1,266 @@
+sAMAccountName,displayName,description,telephoneNumber,mail,IsDisabled,Last change time,Interval,Next change time,Valid time
+CNFJEZ,Jeff Zhou,Overhaul & Rebulid Center,NoPhone,jeff.zhou@cn.atlascopco.com,Enabled,2016/7/15 9:26:20,35,2017/1/11,144
+CNFFUL,Fu Hai Liu,Mechanic,NoPhone,fu.hai.liu@cn.atlascopco.com,Enabled,2016/3/16 13:32:35,156,2016/9/12,23
+CNFRZ,Ren Jue Zhang,Overhaul & Rebulid Center,NoPhone,ren.jue.zhang@cn.atlascopco.com,Enabled,2016/6/2 9:11:34,78,2016/11/29,101
+CNFHOX,Hong Jun Xue,Overhaul & Rebulid Center,NoPhone,hong.jun.xue@cn.atlascopco.com,Enabled,2016/5/3 10:27:37,108,2016/10/30,71
+cnfop,Overhaul Public,Overhaul Public,NoPhone,NoEmail,Enabled,2016/5/31 9:18:28,80,2016/11/27,99
+CNFJIDI,Jian Zhuan Diao,Technical Engineer,'+862586967817,jian.zhuan.diao@cn.atlascopco.com,Enabled,2016/8/9 9:18:40,10,2017/2/5,169
+CNFHEH,Herry Han,Overhaul & Rebulid Center,'+862586919423,herry.han@cn.atlascopco.com,Enabled,2016/4/25 16:18:22,116,2016/10/22,63
+CNFJL,Ji Lian,Service Engineer,'+862586967892,ji.lian@cn.atlascopco.com,Enabled,2016/6/27 17:19:25,52,2016/12/24,127
+CNFZMG,Zong Min Ge,Service Overhaul Workshop,NoPhone,zong.min.ge@cn.atlascopco.com,Enabled,2016/8/1 16:13:17,18,2017/1/28,161
+CNFYUC,Yun Chen,Overhaul & Rebulid Center,'+862586967867,yun.chen@cn.atlascopco.com,Enabled,2016/5/17 8:51:36,94,2016/11/13,85
+CNFKH,Kai Huang,Overhaul Engineer,'+862586967870,kai.huang@cn.atlascopco.com,Enabled,2016/4/5 9:32:57,136,2016/10/2,43
+CNFSAZH,San Zhang,Workshop Mechanic,'+862586967801,san.zhang@cn.atlascopco.com,Enabled,2016/7/11 9:53:19,39,2017/1/7,140
+CNFXIY,Xing Yan,Workshop Mechanic,'+862586967801,xing.yan@cn.atlascopco.com,Enabled,2016/2/24 8:58:08,177,2016/8/22,2
+CNFZL,Zhong Li,Kunming Field Service,'+862586967861,zhong.li@cn.atlascopco.com,Enabled,2016/3/8 9:19:44,164,2016/9/4,15
+CNFAC,Aimi Chen,Service Mechanic / Workshop,'+862586967812,aimi.chen@cn.atlascopco.com,Enabled,2016/4/28 14:43:23,113,2016/10/25,66
+CNFHQF,Huai Quan Fu,Service Foreman,'+862586967859,huai.quan.fu@cn.atlascopco.com,Enabled,2016/6/20 8:35:36,60,2016/12/17,119
+CNFKKL,KK Li,Overhaul & Rebulid Center,'+862586967898,kk.li@cn.atlascopco.com,Enabled,2016/7/1 9:09:08,49,2016/12/28,130
+CNFHAZH,Hailin Zhao,Service Mechanic,NoPhone,hailin.zhao@cn.atlascopco.com,Enabled,2016/6/24 16:08:28,56,2016/12/21,123
+CNFGZY,Guang Zhong Yu,Service Engineer,'+862586967891,guang.zhong.yu@cn.atlascopco.com,Enabled,2016/8/2 9:45:51,17,2017/1/29,162
+CNFZN,Zi Guo Nie,Mechanic,'+862586967863,zi.guo.nie@cn.atlascopco.com,Enabled,2016/7/6 8:38:21,44,2017/1/2,135
+CNFQC,Qing Cai,Kunming Field Service,NoPhone,qing.cai@cn.atlascopco.com,Enabled,2016/3/24 12:03:19,148,2016/9/20,31
+CNFJAZH1,Jackey Zhang,Kunming Overhaul Supervisor,NoPhone,jackey.zhang@cn.atlascopco.com,Enabled,2016/8/15 13:29:45,4,2017/2/11,175
+CNFHUZH2,Hui Zhou,Technical Service,'+862586967874,hui.zhou@cn.atlascopco.com,Enabled,2016/7/14 9:15:48,36,2017/1/10,143
+CNFJX,Jaime Xu,Technical Service,NoPhone,jaime.xu@cn.atlascopco.com,Enabled,2016/3/21 12:39:29,151,2016/9/17,28
+CNFRC,Ru Hua Chen,Nanjing Field Service,NoPhone,ru.hua.chen@cn.atlascopco.com,Enabled,2016/4/24 6:59:25,117,2016/10/21,62
+CNFXNF,Xiao Ning Feng,Technical Service,'+862586967853,xiao.ning.feng@cn.atlascopco.com,Enabled,2016/6/20 8:00:00,60,2016/12/17,119
+CNFQQW,Qing Qing Wang,Technical Service,'+862586967885,qing.qing.wang@cn.atlascopco.com,Enabled,2016/3/23 9:05:59,149,2016/9/19,30
+CNFHPZ,He Ping Zhang,Technical Service,'+862586919426,he.ping.zhang@cn.atlascopco.com,Enabled,2016/6/7 12:02:58,73,2016/12/4,106
+CNFLS,Liang Shi,Technical Service,'+862586967852,liang.shi@cn.atlascopco.com,Enabled,2016/5/19 12:06:52,92,2016/11/15,87
+CNFZX,Zhen Xin,Technical Service,NoPhone,zhen.xin@cn.atlascopco.com,Enabled,2016/6/12 16:13:16,68,2016/12/9,111
+CNFSFW,Shao Fu Wu,Technical Service,'+862586967831,shao.fu.wu@cn.atlascopco.com,Enabled,2016/4/12 8:55:09,129,2016/10/9,50
+CNFCHL,Cheng Lu,Service Mechanic,NoPhone,cheng.lu@cn.atlascopco.com,Enabled,2016/4/12 9:32:38,129,2016/10/9,50
+CNFPXZ,Pei Xiang Zhu,Technical Service,NoPhone,pei.xiang.zhu@cn.atlascopco.com,Enabled,2016/5/24 15:46:29,87,2016/11/20,92
+CNFSZ,Stephen Zhang,Technical Service,'+862586967832,stephen.zhang@cn.atlascopco.com,Enabled,2016/6/30 9:05:01,50,2016/12/27,129
+CNFSIC,Si Wen Chen,Technical Service,NoPhone,si.wen.chen@cn.atlascopco.com,Enabled,2016/5/16 10:54:57,95,2016/11/12,84
+CNFRUZ,Ru Xiang Zhang,Technical Engineer,NoPhone,ru.xiang.zhang@cn.atlascopco.com,Enabled,2016/2/3 17:08:09,197,Password Expired!,
+CNFXP,Xin Fu Pan,Marketing Aftermarket,'+862586967854,xin.fu.pan@cn.atlascopco.com,Enabled,2016/4/21 9:59:13,120,2016/10/18,59
+CNFALZ,Alec Zhang,Service Engineer,'+862586919419,alec.zhang@cn.atlascopco.com,Enabled,2016/6/8 14:46:22,72,2016/12/5,107
+CNNAL,Ai Ning Lu,Office Assistant,'+862586967851,ai.ning.lu@cn.atlascopco.com,Enabled,2016/8/1 9:18:58,18,2017/1/28,161
+CNFXY,Xin Yao,Service Administrator,'+862586967866,xin.yao@cn.atlascopco.com,Enabled,2016/5/17 16:27:58,94,2016/11/13,85
+CNFGAYA,Gao Sheng Yang,Service Administrator,'+862586919428,gao.sheng.yang@cn.atlascopco.com,Enabled,2016/6/6 6:25:45,74,2016/12/3,105
+CNFKIG,Kimi Guo,Call Center,'+862586967876,kimi.guo@cn.atlascopco.com,Enabled,2016/4/25 8:52:03,116,2016/10/22,63
+CNFCAZ,Carrie Zhao,Sales China TME,'+862586919484,carrie.zhao@cn.atlascopco.com,Enabled,2016/3/30 9:12:12,142,2016/9/26,37
+CNFSM,Solenne Ma,Sales China TME,'+862586919441,solenne.ma@cn.atlascopco.com,Enabled,2016/7/6 9:57:45,44,2017/1/2,135
+CNFFIL,Fion Lam,Customer Service-Parts & Consumables,'+862586919446,fion.lam@cn.atlascopco.com,Enabled,2016/3/24 15:08:27,148,2016/9/20,31
+CNFSHZ,Shelly Zhou,Distribution Center,'+862586919464,shelly.zhou@cn.atlascopco.com,Enabled,2016/7/15 9:35:42,35,2017/1/11,144
+CNFjus,Jun Shi,Call Center,'+862586967873,jun.shi@cn.atlascopco.com,Enabled,2016/8/15 9:01:11,4,2017/2/11,175
+CNFDAY,Daisy Ye,Call Center,'+862586919417,daisy.ye@cn.atlascopco.com,Enabled,2016/6/12 10:00:16,68,2016/12/9,111
+CNFSD,Sara Dong,National Sales,'+862586967806,sara.dong@cn.atlascopco.com,Enabled,2016/3/7 14:20:23,165,2016/9/3,14
+CNFYJZ,Yu Juan Zheng,Call Center,'+862586967879,yu.juan.zheng@cn.atlascopco.com,Enabled,2016/7/18 10:28:08,32,2017/1/14,147
+CNFTG,Titan Gong,Distribution Center,'+862586919466,titan.gong@cn.atlascopco.com,Enabled,2016/7/8 9:09:05,42,2017/1/4,137
+CNFXXH,Xiao Xiao Hu,Sales China SDE,'+862586967833,xiao.xiao.hu@cn.atlascopco.com,Enabled,2016/6/20 16:01:58,60,2016/12/17,119
+CNFAX,Alia Xu,Sales China GDE,'+861058706312,alia.xu@cn.atlascopco.com,Enabled,2016/4/1 16:13:31,140,2016/9/28,39
+CNFWEL,Wen Guang Liu,Service Promotion Department,'+862586919427,wen.guang.liu@cn.atlascopco.com,Enabled,2016/5/30 9:53:22,81,2016/11/26,98
+CNFCS,Chris Sun,Sales China TME,'+861058706321,chris.sun@cn.atlascopco.com,Enabled,2016/5/4 9:51:54,107,2016/10/31,72
+CNFMF,Maicon Fan,Key Account Parts Sales Engineer,NoPhone,maicon.fan@cn.atlascopco.com,Enabled,2016/6/16 21:33:45,63,2016/12/13,116
+CNFYAX,Yao Xue,Wuhan Area Sales,NoPhone,yao.xue@cn.atlascopco.com,Enabled,2016/5/26 22:42:08,84,2016/11/22,95
+CNFLL,Leopold Liu,Shenyang Area Sales,NoPhone,leopold.liu@cn.atlascopco.com,Enabled,2016/6/29 9:51:21,51,2016/12/26,128
+CNFLZ,Lewis Zhang,Parts Sales,NoPhone,lewis.zhang@cn.atlascopco.com,Enabled,2016/7/29 18:06:45,20,2017/1/25,159
+CNFHUX,Amanda Xu,Sales Manager,'+862586919430,amanda.xu@cn.atlascopco.com,Enabled,2016/6/20 8:56:31,60,2016/12/17,119
+CNFRLF,Rong Liang Fang,Parts Sales,NoPhone,rong.liang.fang@cn.atlascopco.com,Enabled,2016/8/1 14:25:56,18,2017/1/28,161
+CNFALL,Alex Lin,Parts Sales,NoPhone,alex.lin@cn.atlascopco.com,Enabled,2016/3/15 16:51:59,156,2016/9/11,23
+CNFHZ,Hao Zhang,Call Center,'+862586967872,hao.zhang@cn.atlascopco.com,Enabled,2016/8/8 9:28:09,11,2017/2/4,168
+CNFWIZ,Will Zhu,Parts Sales,NoPhone,will.zhu@cn.atlascopco.com,Enabled,2016/3/23 14:10:18,149,2016/9/19,30
+CNFGAZ,Gary Zhang,Parts Sales,NoPhone,gary.zhang@cn.atlascopco.com,Enabled,2016/6/5 21:53:01,74,2016/12/2,105
+CNFTIZ,Tian Jun Zhang,Urumchi Field Service,'+862586919440,tian.jun.zhang@cn.atlascopco.com,Enabled,2016/4/10 16:51:51,130,2016/10/7,49
+CNFSWF,Shao Wu Feng,Parts Sales,NoPhone,shao.wu.feng@cn.atlascopco.com,Enabled,2016/7/6 15:44:01,44,2017/1/2,135
+CNFFP,Frank Pei,Parts Sales,NoPhone,frank.pei@cn.atlascopco.com,Enabled,2016/8/12 12:55:52,7,2017/2/8,172
+CNFMH,Ming Jun Huang,Beijing Field Service,NoPhone,ming.jun.huang@cn.atlascopco.com,Enabled,2016/3/4 11:08:45,168,2016/8/31,11
+CNFJZ,Jessy Zhang,Key Account Parts Sales Engineer,NoPhone,jessy.zhang@cn.atlascopco.com,Enabled,2016/5/30 9:12:56,81,2016/11/26,98
+CNFFG,Fei Guan,Technical Support,NoPhone,fei.guan@cn.atlascopco.com,Enabled,2016/3/12 18:01:49,159,2016/9/8,20
+CNFFX,Fairy Xu,Technical Training,'+862586919421,fairy.xu@cn.atlascopco.com,Enabled,2016/3/16 11:16:12,156,2016/9/12,23
+CNFZD,Zhi Lin Dai,Technical Training,'+862586967857,zhi.lin.dai@cn.atlascopco.com,Enabled,2016/4/15 11:39:18,126,2016/10/12,53
+CNFHG,Hong Yi Guan,Technical Training,NoPhone,hong.yi.guan@cn.atlascopco.com,Enabled,2016/5/24 8:51:07,87,2016/11/20,92
+CNFAD,Ado Du,Inventory Management,'+862586967877,ado.du@cn.atlascopco.com,Enabled,2016/3/16 8:55:45,156,2016/9/12,23
+CNFSHT,Shao Yi Tian,Xi'an Field Service,NoPhone,shao.yi.tian@cn.atlascopco.com,Enabled,2016/7/14 21:59:29,35,2017/1/10,144
+CNFDEH,De Sen Hu,Service Mechanic(Chengdu),NoPhone,de.sen.hu@cn.atlascopco.com,Enabled,2016/8/1 19:09:58,17,2017/1/28,162
+CNFGD,Gui Ming Dong,Service Mechanic,NoPhone,gui.ming.dong@cn.atlascopco.com,Enabled,2016/3/15 14:22:53,157,2016/9/11,22
+CNFGUY,Guo Qing Yang,Chengdu Field Service,NoPhone,guo.qing.yang@cn.atlascopco.com,Enabled,2016/4/17 23:01:28,123,2016/10/14,56
+CNFXIL,Xiao Ping Li,Beijing Field Service,NoPhone,xiao.ping.li@cn.atlascopco.com,Enabled,2016/7/15 22:44:45,34,2017/1/11,145
+CNFHL,Hong Yang Li,Nanjing Field Service,NoPhone,hong.yang.li@cn.atlascopco.com,Enabled,2016/7/5 13:43:55,45,2017/1/1,134
+CNFBOW,Bo Wang,Service Mechanic,NoPhone,bo.wang@cn.atlascopco.com,Enabled,2016/7/15 8:11:56,35,2017/1/11,144
+CNFLF,Lei Lei Fan,Longqiao Field Service,NoPhone,lei.lei.fan@cn.atlascopco.com,Enabled,2016/6/21 10:44:52,59,2016/12/18,120
+CNFDED,Dean Dong,Service Engineer,NoPhone,dean.dong@cn.atlascopco.com,Enabled,2016/8/16 15:31:43,3,2017/2/12,176
+CNFWF,Wei Feng,Nanjing Field Service,'+862586919424,wei.feng@cn.atlascopco.com,Enabled,2016/5/4 13:07:45,107,2016/10/31,72
+CNFYG,Yong Sheng Gu,Nanjing Field Service,NoPhone,yong.sheng.gu@cn.atlascopco.com,Enabled,2016/5/25 19:30:10,85,2016/11/21,94
+CNFJAH,Jack Huang,Guangzhou Field Service,NoPhone,jack.huang@cn.atlascopco.com,Enabled,2016/7/7 11:16:32,43,2017/1/3,136
+CNFCHW,Cheng Shan Wang,Service Mechanic,'+862586919451,cheng.shan.wang@cn.atlascopco.com,Enabled,2016/6/21 10:35:32,59,2016/12/18,120
+CNFFD,Feng Ji Du,Service Mechanic,NoPhone,feng.ji.du@cn.atlascopco.com,Enabled,2016/4/19 17:19:33,121,2016/10/16,58
+CNFYUZ,Yun Xiang Zhao,Kunming Field Service,NoPhone,yun.xiang.zhao@cn.atlascopco.com,Enabled,2016/8/7 15:22:32,12,2017/2/3,167
+CNFLX,Le Le Xu,Service Mechanic,NoPhone,le.le.xu@cn.atlascopco.com,Enabled,2015/12/26 0:19:22,237,Password Expired!,
+CNFYM,Yong Ku Mao,Xi'an Field Service,NoPhone,yong.ku.mao@cn.atlascopco.com,Enabled,2016/5/17 12:19:54,94,2016/11/13,85
+CNFBIZ,Biao Zhong,Guangzhou Field Service,NoPhone,biao.zhong@cn.atlascopco.com,Enabled,2016/7/4 8:43:54,46,2016/12/31,133
+CNFGW,Guo Wu Wang,Service Machanic,NoPhone,guo.wu.wang@cn.atlascopco.com,Enabled,2016/7/20 7:45:46,30,2017/1/16,149
+CNFKAD,Sunny Dai,Service Engineer,NoPhone,sunny.dai@cn.atlascopco.com,Enabled,2016/3/21 20:47:43,150,2016/9/17,29
+CNFML,Ming Qiang Lian,Urumchi Field Service,NoPhone,ming.qiang.lian@cn.atlascopco.com,Enabled,2016/5/22 12:05:54,89,2016/11/18,90
+CNFYUL,Yu Bao Liu,Beijing Field Service,NoPhone,yu.bao.liu@cn.atlascopco.com,Enabled,2016/5/7 8:18:35,104,2016/11/3,75
+CNFSHL,Shi Shi Lu,Guangzhou Field Service,NoPhone,shi.shi.lu@cn.atlascopco.com,Enabled,2016/7/21 8:12:21,29,2017/1/17,150
+CNFJT,Jian Tang,Wuhan Field Service,'+862586967855,jian.tang@cn.atlascopco.com,Enabled,2016/8/10 8:29:42,9,2017/2/6,170
+CNFDAL,Dao Xue Li,Service Mechanic,NoPhone,dao.xue.li@cn.atlascopco.com,Enabled,2016/5/9 19:16:29,101,2016/11/5,78
+CNFJD,Jian Bin Du,Kunming Field Service,NoPhone,jian.bin.du@cn.atlascopco.com,Enabled,2016/4/21 19:47:18,119,2016/10/18,60
+CNFHUZ,Hui Ming Zhao,Service Mechanic,NoPhone,hui.ming.zhao@cn.atlascopco.com,Enabled,2016/5/24 14:37:24,87,2016/11/20,92
+CNFWEZ,Wei Zhou,Shenyang Field Service,NoPhone,wei.zhou@cn.atlascopco.com,Enabled,2016/4/4 19:44:49,136,2016/10/1,43
+CNFMCC,Mei Chao Chen,Shenyang Field Service,NoPhone,mei.chao.chen@cn.atlascopco.com,Enabled,2016/3/31 4:34:42,141,2016/9/27,38
+CNFDW,Dong Wei Wang,Shenyang Field Service,NoPhone,dong.wei.wang@cn.atlascopco.com,Enabled,2016/3/21 13:25:21,151,2016/9/17,28
+CNFGS,Guo Dong Shi,Beijing Field Service,NoPhone,guo.dong.shi@cn.atlascopco.com,Enabled,2016/3/8 19:59:26,163,2016/9/4,16
+CNFJS,Jian Hua Shen,Service Mechanic,NoPhone,jian.hua.shen@cn.atlascopco.com,Enabled,2016/4/30 22:26:39,110,2016/10/27,69
+CNFLYW,Li Yong Wang,Wuhan Field Service,NoPhone,li.yong.wang@cn.atlascopco.com,Enabled,2016/4/22 9:18:57,119,2016/10/19,60
+CNFYHW,Yi Hua Wang,Beijing Field Service,NoPhone,yi.hua.wang@cn.atlascopco.com,Enabled,2016/7/25 9:43:51,25,2017/1/21,154
+CNFYL,You Le Li,Urumchi Field Service,NoPhone,you.le.li@cn.atlascopco.com,Enabled,2016/4/21 20:59:17,119,2016/10/18,60
+CNFQXG,Qing Xin Guo,Beijing Field Service,NoPhone,qing.xin.guo@cn.atlascopco.com,Enabled,2016/8/4 11:30:06,15,2017/1/31,164
+CNFCJ,Cheng Yu Jia,Shenyang Field Service,NoPhone,cheng.yu.jia@cn.atlascopco.com,Enabled,2016/6/26 15:56:37,54,2016/12/23,125
+CNFCHS,Chun Xi Sheng,Wuhan Field Service,NoPhone,chun.xi.sheng@cn.atlascopco.com,Enabled,2016/3/16 20:24:28,155,2016/9/12,24
+CNFCL,Cheng Liu,Service Mechanic,'+862586919436,cheng.liu@cn.atlascopco.com,Enabled,2016/2/29 10:51:51,172,2016/8/27,7
+CNFZM,Zhan Fei Ma,Baotou Field Service,NoPhone,zhan.fei.ma@cn.atlascopco.com,Enabled,2016/3/31 16:32:42,141,2016/9/27,38
+CNFWWK,Wei Wei Kan,Wuhan Field Service,NoPhone,wei.wei.kan@cn.atlascopco.com,Enabled,2016/5/11 15:42:06,100,2016/11/7,79
+CNFXUL,Xue Yi Li,Kunming Field Service,NoPhone,xue.yi.li@cn.atlascopco.com,Enabled,2016/3/20 10:45:38,152,2016/9/16,27
+CNFMIW,Ming Wang,Kunming Field Service,NoPhone,ming.wang@cn.atlascopco.com,Enabled,2016/4/3 20:51:15,137,2016/9/30,42
+CNFYUZH4,Yue Xian Zheng,Guangzhou Field Service,NoPhone,yue.xian.zheng@cn.atlascopco.com,Enabled,2016/7/29 8:21:35,21,2017/1/25,158
+CNFSHC,Shuang Chen,Beijing Field Service,NoPhone,shuang.chen@cn.atlascopco.com,Enabled,2016/6/28 18:08:39,51,2016/12/25,128
+CNFPAL,Patrick Li,Chengdu Field Service,NoPhone,patrick.li@cn.atlascopco.com,Enabled,2016/7/12 20:27:10,37,2017/1/8,142
+CNFCRW,Cristiano Wu,Urumchi Field Service,NoPhone,cristiano.wu@cn.atlascopco.com,Enabled,2016/5/10 1:06:05,101,2016/11/6,78
+CNFZG,Zhi Zhong Guo,Kunming Field Service,NoPhone,zhi.zhong.guo@cn.atlascopco.com,Enabled,2016/6/16 11:18:36,64,2016/12/13,115
+CNFZY,Zhong Yang,Kunming Field Service,NoPhone,zhong.yang@cn.atlascopco.com,Enabled,2016/7/27 20:46:08,22,2017/1/23,157
+CNFDOYA,Dong Xu Yang,Baotou Field Service,NoPhone,dong.xu.yang@cn.atlascopco.com,Enabled,2016/3/5 15:47:13,167,2016/9/1,12
+CNFGM,Guo Fu Ma,Service Mechanic,NoPhone,guo.fu.ma@cn.atlascopco.com,Enabled,2016/4/26 14:46:48,115,2016/10/23,64
+CNFDALI,Da Hai Li,Chengdu Field Service,NoPhone,da.hai.li@cn.atlascopco.com,Enabled,2016/7/23 17:44:26,26,2017/1/19,153
+CNFDELI,Derek Li,Wuhan Field Service,NoPhone,derek.li@cn.atlascopco.com,Enabled,2016/7/28 14:49:30,22,2017/1/24,157
+CNFJIJ,Jin Shan Ji,Beijing Field Service,NoPhone,jin.shan.ji@cn.atlascopco.com,Enabled,2016/5/1 18:58:10,109,2016/10/28,70
+CNFDIS,Di Sun,Kunming Field Service,NoPhone,di.sun@cn.atlascopco.com,Enabled,2016/6/7 0:44:44,73,2016/12/4,106
+CNFRS,Rui Jie Sun,Baotou Field Service,NoPhone,rui.jie.sun@cn.atlascopco.com,Enabled,2016/3/16 13:52:51,156,2016/9/12,23
+CNFCOH,Cong Huang,Wuhan Field Service,NoPhone,cong.huang@cn.atlascopco.com,Enabled,2016/6/12 12:30:01,68,2016/12/9,111
+CNFMJJ,Min Jie Ju,Longqiao Field Service,NoPhone,min.jie.ju@cn.atlascopco.com,Enabled,2016/6/13 16:06:01,67,2016/12/10,112
+CNFMG,Ming Gao,Xi'an Field Service,NoPhone,ming.gao@cn.atlascopco.com,Enabled,2016/8/8 19:00:29,10,2017/2/4,169
+CNFSHTI,Sheng Qiang Tian,Xi'an Field Service,NoPhone,sheng.qiang.tian@cn.atlascopco.com,Enabled,2016/5/20 17:32:26,90,2016/11/16,89
+CNFDH,Dong Hao,Service Mechanic(Baotou),NoPhone,dong.hao@cn.atlascopco.com,Enabled,2016/3/30 14:55:23,142,2016/9/26,37
+CNFJIL,Ji Bo Li,Chengdu Field Service,NoPhone,ji.bo.li@cn.atlascopco.com,Enabled,2016/2/25 21:04:25,175,2016/8/23,4
+CNFLJT,Li Jun Tang,Longqiao Field Service,NoPhone,li.jun.tang@cn.atlascopco.com,Enabled,2016/6/13 7:33:42,67,2016/12/10,112
+CNFPL,Pei Lv,Baotou Field Service,NoPhone,pei.lv@cn.atlascopco.com,Enabled,2016/6/24 21:35:09,55,2016/12/21,124
+CNFSJ,Shi Ying Jiu,Beijing Field Service,NoPhone,shi.ying.jiu@cn.atlascopco.com,Enabled,2016/3/28 9:13:20,144,2016/9/24,35
+CNFJOL,Job Li,Mechanic,NoPhone,job.li@cn.atlascopco.com,Enabled,2016/7/17 14:19:11,33,2017/1/13,146
+CNFJID,Ji Xiang Du,Service Mechanic,NoPhone,ji.xiang.du@cn.atlascopco.com,Enabled,2016/5/23 18:45:00,87,2016/11/19,92
+CNFCAY,Catherine Yuan,HR Manager,'+862586919403,catherine.yuan@cn.atlascopco.com,Enabled,Password Never Expires,,,
+CNFJEZH,Jessie Zhu,HR,'+862586967835,jessie.zhu@cn.atlascopco.com,Enabled,2016/6/12 9:01:48,68,2016/12/9,111
+CNFJEC,Jeff Cao,HR,'+862586919406,jeff.cao@cn.atlascopco.com,Enabled,2016/4/5 13:20:07,136,2016/10/2,43
+CNFAZ,Annie Zhang,HR Specialist,'+862586967824,annie.zhang@cn.atlascopco.com,Enabled,2016/5/9 13:04:31,102,2016/11/5,77
+CNFHW,Mrcc Hr Intern,Mrcc Hr Intern,NoPhone,mrcc.hr.intern@external.atlascopco.com,Enabled,2016/6/28 9:07:57,52,2016/12/25,127
+cnfkc,Keren Chen,HR Business Partner,'+862586967823,keren.chen@cn.atlascopco.com,Enabled,2016/6/16 9:25:59,64,2016/12/13,115
+CNFJAC,Jansen Cui,Senior Regional Sales Manager,'+861058706307,jansen.cui@cn.atlascopco.com,Enabled,2016/3/24 13:03:46,148,2016/9/20,31
+CNFVS,Vincent Shi,Xi'an Area Sales,NoPhone,vincent.shi@cn.atlascopco.com,Enabled,2016/8/1 9:57:27,18,2017/1/28,161
+CNFXUW,Xue Jie Wang,Nanjing Area Sales,NoPhone,xue.jie.wang@cn.atlascopco.com,Enabled,2016/3/3 16:12:10,169,2016/8/30,10
+CNFXL,Xiao Liang Liu,Sales China SDE,NoPhone,xiao.liang.liu@cn.atlascopco.com,Enabled,2016/6/20 17:42:13,59,2016/12/17,120
+CNFPHW,Philip Wang,Sales China SDE,NoPhone,philip.wang@cn.atlascopco.com,Enabled,2016/3/21 15:39:04,151,2016/9/17,28
+CNFDT,Dang Yuan Tian,Sales China SDE,NoPhone,dang.yuan.tian@cn.atlascopco.com,Enabled,2016/4/9 14:08:28,132,2016/10/6,47
+CNFWW,William Wei,Sales China SDE,'+862586919455,william.wei@cn.atlascopco.com,Enabled,Password Never Expires,,,
+CNFTL,Tim Li,Sales China SDE,NoPhone,tim.li@cn.atlascopco.com,Enabled,2016/7/18 10:52:46,32,2017/1/14,147
+CNFMAW,Markdong Wang,Sales Engineer,NoPhone,markdong.wang@cn.atlascopco.com,Enabled,2016/5/15 22:46:52,95,2016/11/11,84
+CNFRD,River Ding,Product Manager,'+862586967822,river.ding@cn.atlascopco.com,Enabled,2016/6/12 9:08:47,68,2016/12/9,111
+CNFRIL,Rick Liu,Sales China SDE,'+862586919460,rick.liu@cn.atlascopco.com,Enabled,2016/7/12 16:35:58,38,2017/1/8,141
+CNFLD,Leo Deng,Sales China SDE,NoPhone,leo.deng@cn.atlascopco.com,Enabled,2016/8/11 13:29:54,8,2017/2/7,171
+CNFLEZH,Leo w Zhang,SDE Business Line Manager,'+862586919408,leo.w.zhang@cn.atlascopco.com,Enabled,Password Never Expires,,,
+CNFSCH,Scorfild Huang,Area Sales Engineer,NoPhone,scorfild.huang@cn.atlascopco.com,Enabled,2016/6/12 0:12:44,68,2016/12/9,111
+CNFJALI2,Jackey Li,Nanjing Area Sales,'+862586919442,jackey.li@cn.atlascopco.com,Enabled,2016/3/25 15:30:37,147,2016/9/21,32
+CNFEL,Earke Li,Wuhan area sales,NoPhone,earke.li@cn.atlascopco.com,Enabled,2016/7/25 10:32:14,25,2017/1/21,154
+CNFBAY,Bao Zhen Yue,SDE Sales,'+861058706228,bao.zhen.yue@cn.atlascopco.com,Enabled,2016/4/20 15:42:06,121,2016/10/17,58
+CNFSHZH,Shawn Zhang,Sales China SDE,'+862122084862,shawn.zhang@cn.atlascopco.com,Enabled,2016/4/26 11:08:53,115,2016/10/23,64
+CNFJG,Jian Gao,Sales China SDE,'+862122084872,jian.gao@cn.atlascopco.com,Enabled,2016/2/15 16:13:47,186,Password Expired!,
+CNFSH,Shining He,Sales China TME,'+861058706216,shining.he@cn.atlascopco.com,Enabled,2016/5/24 7:47:17,87,2016/11/20,92
+CNFXW,Xiao Qing Wang,Sales China TME,'+861058706215,xiao.qing.wang@cn.atlascopco.com,Enabled,2016/5/18 17:11:42,92,2016/11/14,87
+CNFJJ,James Jin,Sales China TME,NoPhone,james.jin@cn.atlascopco.com,Enabled,2016/4/8 11:35:52,133,2016/10/5,46
+CNFBW1,Barnett Wang,Sales China TME,'+861058706322,barnett.wang@cn.atlascopco.com,Enabled,2016/6/6 11:13:08,74,2016/12/3,105
+CNFKY,Kaichun Ye,Wuhan area sales,NoPhone,kaichun.ye@cn.atlascopco.com,Enabled,2016/3/31 21:14:08,140,2016/9/27,39
+CNFVIC,Vincent Cheng,Sales China TME,NoPhone,vincent.cheng@cn.atlascopco.com,Enabled,2016/6/27 9:41:55,53,2016/12/24,126
+CNFLJ,Li Gong Ji,Beijing Area Sales,'+861058706217,li.gong.ji@cn.atlascopco.com,Enabled,2016/3/16 11:43:12,156,2016/9/12,23
+CNFTW,Tao Wang,Sales China TME,'+862586967896,tao.wang@cn.atlascopco.com,Enabled,2016/7/4 15:33:00,46,2016/12/31,133
+CNFVC,Victor Chang,Sales China TME,NoPhone,victor.chang@cn.atlascopco.com,Enabled,2016/5/31 10:08:32,80,2016/11/27,99
+CNFNIZ,Nicolas Zhang,Sales China TME,'+862586919438,nicolas.zhang@cn.atlascopco.com,Enabled,2016/3/7 13:06:39,165,2016/9/3,14
+CNFBB,Byron Bo,Sales China TME,'+862586919458,byron.bo@cn.atlascopco.com,Enabled,2016/5/24 10:30:39,87,2016/11/20,92
+CNFYGS,Yong Ge Sun,Kunming area sales,NoPhone,yong.ge.sun@cn.atlascopco.com,Enabled,2016/5/19 15:16:37,92,2016/11/15,87
+CNFPAS,Pan Shi,Area Sales Engineer,NoPhone,pan.shi@cn.atlascopco.com,Enabled,2016/3/28 12:57:29,144,2016/9/24,35
+CNFGELI,George Liang,Sales China TME,NoPhone,george.liang@cn.atlascopco.com,Enabled,2016/7/15 21:27:32,34,2017/1/11,145
+CNFCAZH,Carl Zhang,Sales China TME,NoPhone,carl.zhang@cn.atlascopco.com,Enabled,2016/5/9 12:12:04,102,2016/11/5,77
+CNFHFL,Hua Feng Liu,Sales China TME,'+862586919452,hua.feng.liu@cn.atlascopco.com,Enabled,2016/7/4 9:57:02,46,2016/12/31,133
+CNFDEL,Deng Liu,Xi'an Area Sales,'+862586919450,deng.liu@cn.atlascopco.com,Enabled,2016/4/19 16:35:00,122,2016/10/16,57
+CNFST,Steven Tan,BLM TME,'+861058706368,steven.tan@cn.atlascopco.com,Enabled,2016/8/8 11:48:43,11,2017/2/4,168
+CNFEY,Eric Yi,Beijing area sales,'+861058706317,eric.yi@cn.atlascopco.com,Enabled,2016/6/13 9:18:06,67,2016/12/10,112
+CNFJEW,Jennifer Wang,Sales China SDE,'+861058706226,jennifer.wang@cn.atlascopco.com,Enabled,2016/7/5 14:48:52,45,2017/1/1,134
+CNFMK,Mont Kan,Sales China TME,'+862586919487,mont.kan@cn.atlascopco.com,Enabled,2016/6/20 13:19:56,60,2016/12/17,119
+CNFCOC,Colls Chang,Xi'an area sales,NoPhone,colls.chang@cn.atlascopco.com,Enabled,2016/6/12 9:45:12,68,2016/12/9,111
+CNFZT,Zeng Lu Tang,Sales China GDE,'+862122084873,zeng.lu.tang@cn.atlascopco.com,Enabled,2016/6/12 8:36:49,68,2016/12/9,111
+CNFJEZH1,Jet Zhang,Area Sales Manager,'+861058706227,jet.zhang@cn.atlascopco.com,Enabled,2016/3/21 15:24:18,151,2016/9/17,28
+CNFGAY,Gang Yan,Sales China RDT,NoPhone,gang.yan@cn.atlascopco.com,Enabled,2016/6/27 9:12:04,53,2016/12/24,126
+CNFXULI,Xu Heng Li,Sales China RDT,'+861058706349,xu.heng.li@cn.atlascopco.com,Enabled,2016/4/25 10:17:41,116,2016/10/22,63
+CNFGEL,George Lan,Sales China RDT,NoPhone,george.lan@cn.atlascopco.com,Enabled,2016/5/18 13:30:24,93,2016/11/14,86
+cncml,Mark A Lee,Sales China RDT,'+862586967882,mark.a.lee@cn.atlascopco.com,Enabled,2016/6/6 15:12:03,74,2016/12/3,105
+CNFSF,Shang Shi Feng,Sales China RDT,NoPhone,shang.shi.feng@cn.atlascopco.com,Enabled,2016/4/28 17:36:03,112,2016/10/25,67
+CNFQX,Qiang Xiao,Shenyang Field Service,NoPhone,qiang.xiao@cn.atlascopco.com,Enabled,2016/5/13 8:43:18,98,2016/11/9,81
+CNFTIY,Tiger Yu,Sales China RDT,NoPhone,tiger.yu@cn.atlascopco.com,Enabled,2016/3/28 15:18:07,144,2016/9/24,35
+CNFDZW,De Zhu Wang,Technical Service,'+862586919476,de.zhu.wang@cn.atlascopco.com,Enabled,2016/4/20 11:06:55,121,2016/10/17,58
+CNFJYZ,Ju Yong Zhang,Technical Service,'+862586919418,ju.yong.zhang@cn.atlascopco.com,Enabled,2016/4/13 8:55:59,128,2016/10/10,51
+CNFXXZ,Xin Xin Zhang,Nanjing Field Service,NoPhone,xin.xin.zhang@cn.atlascopco.com,Enabled,2016/5/30 10:34:26,81,2016/11/26,98
+CNFJJH,Jian Jun Hao,Sales China RDT,NoPhone,jian.jun.hao@cn.atlascopco.com,Enabled,2016/4/4 11:59:01,137,2016/10/1,42
+CNFCZ,Cynthia Zeng,Sales China RDT,'+861058706311,cynthia.zeng@cn.atlascopco.com,Enabled,2016/7/17 21:23:07,32,2017/1/13,147
+CNFJAYE1,Jason Ye,Sales China ADS,NoPhone,jason.ye@cn.atlascopco.com,Enabled,2016/8/15 9:22:44,4,2017/2/11,175
+CNFMAD,Mark Deng,ADS Sales,'+861058706315,mark.deng@cn.atlascopco.com,Enabled,2016/6/20 9:29:52,60,2016/12/17,119
+CNFAIJ,Ai Jia,Sales China ADS,NoPhone,ai.jia@cn.atlascopco.com,Enabled,2016/5/24 10:16:56,87,2016/11/20,92
+CNFAMY,Amanda Yang,Distribution Center,'+862586919465,amanda.yang@cn.atlascopco.com,Enabled,2016/6/12 14:08:22,68,2016/12/9,111
+CNFARL,Aries Li,Distribution Center,'+862586919463,aries.li@cn.atlascopco.com,Enabled,2016/5/19 10:57:14,92,2016/11/15,87
+CNFLOZ,Long Fei Zhang,Warehouse,NoPhone,long.fei.zhang@cn.atlascopco.com,Enabled,2016/5/3 10:05:23,108,2016/10/30,71
+CNFJUSO,Jun Wei Song,Warehouse Handler,NoPhone,jun.wei.song@cn.atlascopco.com,Enabled,2016/5/6 11:12:53,105,2016/11/2,74
+CNFCHCH,Chun Chen,Warehouse,'+862586967815,chun.chen@cn.atlascopco.com,Enabled,2016/8/1 13:03:47,18,2017/1/28,161
+CNFJY,Jing Yan,Distribution Center,'+862586967829,jing.yan@cn.atlascopco.com,Enabled,2016/5/23 15:26:26,88,2016/11/19,91
+CNFHY,Hua Yang,Warehouse,'+862586967813,hua.yang@cn.atlascopco.com,Enabled,2016/7/26 9:03:15,24,2017/1/22,155
+CNFZZ,Zhan Zhang,Warehouse Handler,'+862586919415,zhan.zhang@cn.atlascopco.com,Enabled,2016/3/21 13:02:26,151,2016/9/17,28
+CNFJPW,Ji Ping Wang,Warehouse,NoPhone,ji.ping.wang@cn.atlascopco.com,Enabled,2016/5/27 7:39:27,84,2016/11/23,95
+CNFYOW,Yong Fei Wang,Warehouse,'+862586919469,yong.fei.wang@cn.atlascopco.com,Enabled,2016/4/25 8:57:51,116,2016/10/22,63
+CNFLOW,Long Wang,Warehouse,'+862586919435,long.wang@cn.atlascopco.com,Enabled,2016/3/15 12:55:00,157,2016/9/11,22
+CNFLIS,Li Shi,Wuhan Warehouse,NoPhone,li.shi@cn.atlascopco.com,Enabled,2016/8/8 9:26:31,11,2017/2/4,168
+CNFMX,Martin Xie,Distribution Center,'+862586967820,martin.xie@cn.atlascopco.com,Enabled,2016/6/12 9:25:16,68,2016/12/9,111
+CNFCC,Carson Chen,Distribution Center,'+862586967826,carson.chen@cn.atlascopco.com,Enabled,2016/4/22 11:30:09,119,2016/10/19,60
+CNFPK,Patrick Kong,Distribution Center,'+862586967811,patrick.kong@cn.atlascopco.com,Enabled,2016/3/7 12:37:28,165,2016/9/3,14
+CNFSY,Susie Yang,Distribution Center,'+862586967816,susie.yang@cn.atlascopco.com,Enabled,2016/6/16 9:29:56,64,2016/12/13,115
+CNFRH,River Hu,Distribution Center,'+862586919482,river.hu@cn.atlascopco.com,Enabled,2016/5/30 9:18:47,81,2016/11/26,98
+CNFDP,Dc Planner Intern,DC Planner Intern,NoPhone,dc.planner.intern@external.atlascopco.com,Enabled,2016/5/31 9:40:36,80,2016/11/27,99
+CNFJAX,Jane Xu,Distribution Center,'+862586967818,jane.xu@cn.atlascopco.com,Enabled,2016/4/27 14:57:50,114,2016/10/24,65
+CNNCNI,Cnn Import Export,Import&Export Intern,NoPhone,cnn.import.export@external.atlascopco.com,Enabled,2016/3/11 11:17:49,161,2016/9/7,18
+CNFJEJ,Jenny Jiang,Credit Control,'+862586967807,jenny.jiang@cn.atlascopco.com,Enabled,2016/7/13 9:10:57,37,2017/1/9,142
+CNFSHZH1,Shelly Zhang,Business Controller,'+862586919409,shelly.zhang@cn.atlascopco.com,Enabled,2016/7/8 9:01:07,42,2017/1/4,137
+CNFSY1,Shun Yao Yu,Credit Control,'+862586967836,shun.yao.yu@cn.atlascopco.com,Enabled,2016/7/11 14:38:12,39,2017/1/7,140
+CNFHH,Haven Hou,Controlling general,'+862586967843,haven.hou@cn.atlascopco.com,Enabled,2016/7/12 9:03:54,38,2017/1/8,141
+CNFGZ,Gang Zhang,Purchaser,'+862586967803,gang.zhang@cn.atlascopco.com,Enabled,2016/4/11 14:58:45,130,2016/10/8,49
+CNFJEZH2,Jenice Zhu,Business Analyst,'+862586967845,jenice.zhu@cn.atlascopco.com,Enabled,2016/7/12 11:07:56,38,2017/1/8,141
+CNFAL,Amber Li,Accountant,'+862586967827,amber.li@cn.atlascopco.com,Enabled,2016/7/20 12:44:59,30,2017/1/16,149
+CNFVN,Vivian Ni,Assistant Business Analyst,'+862586967847,vivian.ni@cn.atlascopco.com,Enabled,2016/7/25 9:41:20,25,2017/1/21,154
+CNSFZ,Frank Zhao,BC (Project Mountain),NoPhone,frank.zhao@cn.atlascopco.com,Enabled,2016/5/3 10:31:05,108,2016/10/30,71
+CNFMY,Mark Yao,SHEQ/IMS Manager,'+862586967804,mark.yao@cn.atlascopco.com,Enabled,2016/3/21 9:18:11,151,2016/9/17,28
+CNFTIL,Tim Liu,Integrated Management System Manager,NoPhone,NoEmail,Enabled,Password Never Expires,,,
+CNFYUW,Yuan Yuan Wei,Kunming Admin,'+862586919414,yuan.yuan.wei@cn.atlascopco.com,Enabled,2016/6/6 11:33:11,74,2016/12/3,105
+CNFLIW,Ling Wang,Office Administrator,'+862586967895,ling.wang@cn.atlascopco.com,Enabled,2016/8/1 15:36:28,18,2017/1/28,161
+CNFCW,Cathy Wang,Office Administration,'+861058706308,cathy.wang@cn.atlascopco.com,Enabled,2016/5/31 10:06:00,80,2016/11/27,99
+CNFZHN,Zhi Yan Nan,Office Administration,'+862586919448,zhi.yan.nan@cn.atlascopco.com,Enabled,2016/4/6 9:22:44,135,2016/10/3,44
+CNFJUZ,Judy Zhang,Office Administration,'+862586919434,judy.zhang@cn.atlascopco.com,Enabled,2016/5/23 9:45:58,88,2016/11/19,91
+CNFCX,Cindy Xu,Office Administrator,NoPhone,cindy.xu@cn.atlascopco.com,Enabled,2016/7/29 9:22:10,21,2017/1/25,158
+CNFSS,Stella Sun,Office Administration,'+861058706306,stella.sun@cn.atlascopco.com,Enabled,2016/5/17 11:28:41,94,2016/11/13,85
+CNFZYJ,Zhen Yu Jin,Office Administrator,'+862586967883,zhen.yu.jin@cn.atlascopco.com,Enabled,2016/8/3 13:59:51,16,2017/1/30,163
+CNFMW,Mavis Wang,Office Administration,'+862586967839,mavis.wang@cn.atlascopco.com,Enabled,2016/6/12 9:55:22,68,2016/12/9,111
+CNFXZ,Xiaoz Zhang,Channel Manager,'+861058706335,xiaoz.zhang@cn.atlascopco.com,Enabled,2016/3/24 16:29:11,148,2016/9/20,31
+CNFCM,Coco Meng,Area Customer Officer,'+861058706332,coco.meng@cn.atlascopco.com,Enabled,2016/3/7 9:17:17,165,2016/9/3,14
+CNFJILI,Jing Wen Liu,Promotion Officer,'+862122084863,jing.wen.liu@cn.atlascopco.com,Enabled,2016/4/29 10:50:57,112,2016/10/26,67
+CNFET,Echo Tao,Marketing Department,'+861058706325,echo.tao@cn.atlascopco.com,Enabled,2016/3/24 16:16:53,148,2016/9/20,31
+CNFFIZ,Fiona Zhu,Marketing Department,'+861058706327,fiona.zhu@cn.atlascopco.com,Enabled,2016/5/26 9:17:32,85,2016/11/22,94
+CNFLW,Lily Wei,Marketing Department,'+861058706329,lily.wei@cn.atlascopco.com,Enabled,2016/3/9 11:11:16,163,2016/9/5,16
+CNFSTC,Stacy Cai,Marketing,'+861058706337,stacy.cai@cn.atlascopco.com,Enabled,2016/4/20 15:27:11,121,2016/10/17,58
+CNFCAH,Caroline He,Marketing Department,'+861058706331,caroline.he@cn.atlascopco.com,Enabled,2016/8/8 15:01:18,11,2017/2/4,168
+CNFNF,Nan Fei,Marketing Department,'+861058706323,nan.fei@cn.atlascopco.com,Enabled,2016/5/25 9:55:49,86,2016/11/21,93
+CNFLEZ,Leona Zhang,Marketing Department,'+861058706358,leona.zhang@cn.atlascopco.com,Enabled,2016/4/27 11:10:19,114,2016/10/24,65
+CNFFC,Fang Chen,Business Development Manager,'+862586967821,fang.chen@cn.atlascopco.com,Enabled,2016/6/16 15:03:11,64,2016/12/13,115
+CNFXH,Xun Huang,Invoice & Collection Officer,'+862586967837,xun.huang@cn.atlascopco.com,Enabled,2016/6/24 9:06:07,56,2016/12/21,123
+CNFZOL,Zong Ya Li,Workshop Mechanic,'+862586967801,zong.ya.li@cn.atlascopco.com,Enabled,2016/6/14 13:23:26,66,2016/12/11,113
+HKCFM,Freddy Man,GM,'+861058706388,freddy.man@hk.atlascopco.com,Enabled,2016/6/24 12:56:24,56,2016/12/21,123
+CNFNL,Nina Li,Admin Intern,NoPhone,nina.li@cn.atlascopco.com,Enabled,2016/6/7 13:51:07,73,2016/12/4,106
+CNFDY,David Yang,Re-charge cost centre 2,'+862586967810,david.yang@cn.atlascopco.com,Enabled,2016/6/11 21:47:55,68,2016/12/8,111
+CNFKED,Kevin Deng,Key Account Parts Sales Engineer,NoPhone,kevin.deng@cn.atlascopco.com,Enabled,2016/4/6 13:02:32,135,2016/10/3,44
+CNFGAZH,Gao Yan Zhao,Warehouse Handler,'+861058706201,gao.yan.zhao@cn.atlascopco.com,Enabled,2016/8/18 15:29:45,1,2017/2/14,178
+CNFPJ,Penny Jin,BC Intern,NoPhone,penny.jin@cn.atlascopco.com,Enabled,2016/4/25 13:29:46,116,2016/10/22,63

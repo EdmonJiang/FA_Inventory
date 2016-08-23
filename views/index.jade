@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  include nav.jade
+  .container
+    h1 Fixed Assets Infomation
+    table.table.table-striped.table-hover
+      colgroup
+        col
+        col(style="width:12%")
+        col
+        col(style="width:12%")
+        col
+        col
+        col(style="width: 5%")
+        col
+        col
+      tr
+        th ComputerName
+        th displayName
+        th Domain
+        th Model
+        th SN
+        th OS
+        th RAM
+        th HDD
+        th Details
+          
+      
+      each pcinfo in pcinfos
+        tr
+          td= pcinfo.ComputerName
+          td= pcinfo.displayName
+          td= pcinfo.Domain
+          td= pcinfo.Model
+          td= pcinfo.SN
+          td= pcinfo.OS
+          td= pcinfo.RAM
+          td= pcinfo.HDD
+          td
+            a.btn.btn-info(href='/details/'+pcinfo.ComputerName,target='_blank') View Details
+  
