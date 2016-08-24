@@ -10,6 +10,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(configDB.uri);
 
 var routes = require('./routes/index');
+var reports = require('./routes/reports');
 var users = require('./routes/users');
 
 var app = express();
@@ -34,7 +35,7 @@ app.use('/', function(req,res,next){
 });
 
 app.use('/', routes);
-
+app.use('/reports', reports);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

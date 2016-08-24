@@ -1,17 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var Pcinfo = require('../models/pcinfo.js');
-var glob = require('glob');
 var userinfo = {};
-var fs=require('fs');
-var mongoXlsx = require('mongo-xlsx');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
   Pcinfo.find({}).exec(function(err, pcinfos){
     if (err){return next(new Error('could not find data!'))};
-    var url = req.url;
-    res.render('index', {pcinfos: pcinfos, currentUrl: url});
+
+    res.render('index', {pcinfos: pcinfos, currentUrl: '/index'});
   })
   
 });
@@ -105,30 +103,5 @@ router.get('/delete/:cn', function(req, res, next){
   }
 })
 
-router.get('/reports/', function(req, res, next){
-  var reports = glob.sync('./public/reports/*',{nodir:true}).map(function(item){return item.split('/').slice(-1)});
-  var url = req.url;
-
-  res.render('reports', {currentUrl: url, reports: reports});
-})
-
-router.get('/reports/:filename', function(req, res, next){
-  var filename = req.params.filename;
-  var reports = glob.sync('./public/reports/*',{nodir:true});
-  if(filename in reports){
-      reports.forEach(function(report,index){
-      if(filename === report.split('/').slice(-1)){
-        fs.creatReadStream(report).pipe(res);
-      }
-    })
-  }else{
-    res.end();
-  }
-  
-})
-
-router.get('/reports/generate/', function(req, res, next){
- 
-})
 
 module.exports = router;
