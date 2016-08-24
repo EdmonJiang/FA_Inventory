@@ -29,6 +29,7 @@ router.post('/', function(req, res, next){
           }
         }
         doc.updated = new Date;
+        doc.increment();
         doc.save(function(err){
           if (err){return next(new Error('save failed!'))};
           console.log('save successful');
@@ -64,7 +65,6 @@ router.get('/details/:cn', function(req, res, next){
             objpc[prop]=details._doc[prop];
           }
         }
-        delete objpc.__v;
         delete objpc._id;
         res.render('details', {computer: objpc});
       };
