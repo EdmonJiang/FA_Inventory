@@ -45,17 +45,17 @@ $(function(){
         if(newAcces !== oldAcces){
             data.Accessories = newAcces;
         }
-        console.log(data);
+        //console.log(data);
         if($.isEmptyObject(data)){
-            console.log('there is no data, return false ----------');
+            //console.log('there is no data, return false ----------');
             $('#td-asset').html(oldAsset);
             $('#td-acces').html(oldAcces);
             $('#btn-edit').text('Edit');
             $('#btn-save').remove();
         }else{
             
-            console.log('there is some data, return true ------------');            
-            data.updated = new Date;
+            //console.log('there is some data, return true ------------');            
+            //data.updated = new Date;
             $.post(window.location.pathname, data, function(res){
                 if(res === 'successful'){
                     $('#td-asset').html(newAsset);
