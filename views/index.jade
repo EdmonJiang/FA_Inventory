@@ -1,24 +1,24 @@
 extends layout
 
+append script
+  script(src='/javascripts/jquery.twbsPagination.min.js')
 block content
   include nav.jade
   .container
     h1 Fixed Assets Infomation
     table.table.table-striped.table-hover
       colgroup
+        col(style="width:11%")
+        col(style="width:11%")
+        col(style="width:11%")
         col
-        col(style="width:12%")
-        col
-        col(style="width:12%")
-        col
-        col
+        col(style="width: 16%")
         col(style="width: 5%")
         col
         col
       tr
         th ComputerName
         th displayName
-        th Domain
         th Model
         th SN
         th OS
@@ -31,7 +31,6 @@ block content
         tr
           td= pcinfo.ComputerName
           td= pcinfo.displayName
-          td= pcinfo.Domain
           td= pcinfo.Model
           td= pcinfo.SN
           td= pcinfo.OS
@@ -39,4 +38,17 @@ block content
           td= pcinfo.HDD
           td
             a.btn.btn-info(href='/details/'+pcinfo.ComputerName,target='_blank') View Details
-  
+
+    ul.sync-pagination.pagination-sm
+
+  script.
+    $('.sync-pagination').twbsPagination({
+      totalPages: #{totalPage},
+      visiblePages: 10,
+      href:'?page={{number}}',
+      initiateStartPageClick: false,
+      onPageClick: function (event, page) {
+        //$('#page-content').text('Page ' + page);
+      }
+    });
+    

@@ -5,8 +5,9 @@ html
     block css
       link(rel='stylesheet', href='/stylesheets/style.css')
       link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    script(src='/javascripts/jquery.min.js')
-    script(src='/javascripts/bootstrap.min.js')
+    block script
+      script(src='/javascripts/jquery.min.js')
+      script(src='/javascripts/bootstrap.min.js')
     style.
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }

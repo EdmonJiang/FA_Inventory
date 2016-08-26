@@ -1,22 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var Pcinfo = require('../models/pcinfo.js');
-var userinfo = {};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(req.query);
+  var currentPage = 1;
+  if(req.query.page){
+    currentPage = req.query.page;
+  }
 
-  Pcinfo.find({}).exec(function(err, pcinfos){
-    if (err){return next(new Error('could not find data!'))};
+  Pcinfo.count({},function(err, count){
+    Pcinfo.find({})
+      .sort('ComputerName').skip((currentPage-1)*10).limit(10)
+      .exec(function(err, pcinfos){
+      if (err){return next(new Error('could not find data!'))};
 
-    res.render('index', {pcinfos: pcinfos, currentUrl: '/index'});
+      res.render('index', {
+        pcinfos: pcinfos, 
+        currentUrl: '/index',
+        totalPage: Math.ceil(count/10)
+      });
+    })
   })
+  
   
 });
 
 router.post('/', function(req, res, next){
-
-  console.log(req.body);
+  var userinfo = {};
   userinfo = req.body;
   res.end();
   
