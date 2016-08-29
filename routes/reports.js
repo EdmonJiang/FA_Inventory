@@ -4,7 +4,6 @@ var Pcinfo = require('../models/pcinfo.js');
 var glob = require('glob');
 var userinfo = {};
 var fs=require('fs');
-var mongoXlsx = require('mongo-xlsx');
 /* GET reports page. */
 
 router.get('/', function(req, res, next){

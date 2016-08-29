@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
     sort = 'pc';
   }
  // sort = objSort[sort];
-  console.log(sort);
+ // console.log(sort);
   if(req.query.q){
     // q.push({'ComputerName': new RegExp(req.query.q.trim(), 'i')});
     // q.push({'displayName': new RegExp(req.query.q.trim(), 'i')});

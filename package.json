@@ -12,7 +12,6 @@
     "express": "~4.13.4",
     "glob": "^7.0.5",
     "jade": "~1.11.0",
-    "mongo-xlsx": "^1.0.12",
     "mongoose": "^4.5.9",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
