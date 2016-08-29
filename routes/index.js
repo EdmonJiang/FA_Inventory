@@ -4,21 +4,33 @@ var Pcinfo = require('../models/pcinfo.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(req.query);
+  
   var currentPage = 1;
+  var q = {};
+  var d = {};
+  var qstring = '';
   if(req.query.page){
     currentPage = req.query.page;
   }
 
-  Pcinfo.count({},function(err, count){
-    Pcinfo.find({})
+  if(req.query.q){
+    q.ComputerName = new RegExp(req.query.q.trim(), 'i');
+    d.displayName = new RegExp(req.query.q.trim(), 'i');
+    //q.SN = new RegExp(req.query.q.trim(), 'i');
+    qstring = '&q='+req.query.q;
+  }
+  console.log(q);
+  Pcinfo.find({}).or([q,d]).count(function(err, count){
+    Pcinfo.find({}).or([q,d])
       .sort('ComputerName').skip((currentPage-1)*10).limit(10)
       .exec(function(err, pcinfos){
       if (err){return next(new Error('could not find data!'))};
-
+      console.log("count is: "+count);
       res.render('index', {
         pcinfos: pcinfos, 
         currentUrl: '/index',
+        keyword: req.query.q,
+        qstring: qstring,
         totalPage: Math.ceil(count/10)
       });
     })

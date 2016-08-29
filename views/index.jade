@@ -1,11 +1,15 @@
 extends layout
 
+
 append script
   script(src='/javascripts/jquery.twbsPagination.min.js')
 block content
   include nav.jade
   .container
     h1 Fixed Assets Infomation
+    form.form-inline.pull-right.index-filter(onsubmit="onSearch()")
+      .form-group
+        input.form-control(type="text",id="txtSearch",name="q",value=keyword,placeholder="Search...")
     table.table.table-striped.table-hover
       colgroup
         col(style="width:11%")
@@ -25,8 +29,7 @@ block content
         th RAM
         th HDD
         th Details
-          
-      
+
       each pcinfo in pcinfos
         tr
           td= pcinfo.ComputerName
@@ -42,13 +45,26 @@ block content
     ul.sync-pagination.pagination-sm
 
   script.
+    $(function(){
+      txtSearch = $('#txtSearch');
+      txtSearch.focus();
+      txtSearch.val(txtSearch.val());
+    });
+
     $('.sync-pagination').twbsPagination({
       totalPages: #{totalPage},
       visiblePages: 10,
-      href:'?page={{number}}',
       initiateStartPageClick: false,
+      href: '?page={{number}}!{qstring}',
       onPageClick: function (event, page) {
         //$('#page-content').text('Page ' + page);
       }
     });
     
+    function onSearch(){
+      keyword = $('#txtSearch').val().trim();
+      if(keyword===''){
+        $('#txtSearch').removeAttr('name');
+      };
+      return true;
+    }
