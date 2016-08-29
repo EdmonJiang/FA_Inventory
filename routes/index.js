@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
         currentUrl: '/index',
         keyword: req.query.q,
         qstring: qstring,
-        totalPage: Math.ceil(count/10)
+        totalPage: count===0?1:Math.ceil(count/10)
       });
     })
   })

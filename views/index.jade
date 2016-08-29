@@ -7,7 +7,7 @@ block content
   include nav.jade
   .container
     h1 Fixed Assets Infomation
-    form.form-inline.pull-right.index-filter(onsubmit="onSearch()")
+    form.form-inline.pull-right.index-filter(onsubmit="return onSearch();")
       .form-group
         input.form-control(type="text",id="txtSearch",name="q",value=keyword,placeholder="Search...")
     table.table.table-striped.table-hover
@@ -63,8 +63,11 @@ block content
     
     function onSearch(){
       keyword = $('#txtSearch').val().trim();
+      console.log(keyword);
       if(keyword===''){
-        $('#txtSearch').removeAttr('name');
+        //$('#txtSearch').removeAttr('name');
+        window.location.href = '/';
+        return false;
       };
       return true;
     }
