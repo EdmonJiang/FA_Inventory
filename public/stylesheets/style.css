@@ -3,7 +3,6 @@ body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 .btn-size {
     width: 78px !important;
 }
@@ -14,4 +13,8 @@ body {
 }
 .index-filter{
   margin-bottom: 8px;
+}
+.head-title{
+  font: 13px Helvetica, Arial;
+  font-weight: 700;
 }

@@ -12,7 +12,7 @@ block content
         input.form-control(type="text",id="txtSearch",name="q",value=keyword,placeholder="Search...")
     table.table.table-striped.table-hover
       colgroup
-        col(style="width:11%")
+        col(style="width:13%")
         col(style="width:11%")
         col(style="width:11%")
         col
@@ -21,8 +21,14 @@ block content
         col
         col
       tr
-        th ComputerName
-        th displayName
+        th
+          a(href="/?"+'sort=' + (sort==='pcd'?'pc':'pcd')+qstring + '&page='+currentPage)
+            i(class={"fa fa-arrow-up": sort==="pc"},class={"fa fa-arrow-down": sort==="pcd"})
+              span.head-title ComputerName
+        th
+          a(href="/?"+'sort=' + (sort==='named'?'name':'named')+qstring + '&page='+currentPage)
+            i(class={"fa fa-arrow-up": sort==="name"},class={"fa fa-arrow-down": sort==="named"})
+              span.head-title displayName
         th Model
         th SN
         th OS
@@ -55,7 +61,7 @@ block content
       totalPages: #{totalPage},
       visiblePages: 10,
       initiateStartPageClick: false,
-      href: '?page={{number}}!{qstring}',
+      href: '?sort=#{sort}!{qstring}&page={{number}}',
       onPageClick: function (event, page) {
         //$('#page-content').text('Page ' + page);
       }
