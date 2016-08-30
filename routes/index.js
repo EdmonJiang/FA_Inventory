@@ -42,6 +42,7 @@ router.get('/', function(req, res, next) {
         pcinfos: pcinfos, 
         currentUrl: '/index',
         currentPage: currentPage,
+        count: count,
         keyword: req.query.q,
         sort: sort,
         qstring: qstring,

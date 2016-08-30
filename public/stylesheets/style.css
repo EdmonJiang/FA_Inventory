@@ -18,3 +18,10 @@ body {
   font: 13px Helvetica, Arial;
   font-weight: 700;
 }
+.page-count{
+    float: right;
+    height: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    padding-right: 8px;
+}
