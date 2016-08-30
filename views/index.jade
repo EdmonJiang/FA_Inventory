@@ -22,11 +22,11 @@ block content
         col
       tr
         th
-          a(href="/?"+'sort=' + (sort==='pcd'?'pc':'pcd')+qstring + '&page='+currentPage)
+          a(href="/?"+'sort=' + (sort==='pc'?'pcd':'pc')+qstring + '&page='+currentPage)
             i(class={"fa fa-arrow-up": sort==="pc"},class={"fa fa-arrow-down": sort==="pcd"})
               span.head-title ComputerName
         th
-          a(href="/?"+'sort=' + (sort==='named'?'name':'named')+qstring + '&page='+currentPage)
+          a(href="/?"+'sort=' + (sort==='name'?'named':'name')+qstring + '&page='+currentPage)
             i(class={"fa fa-arrow-up": sort==="name"},class={"fa fa-arrow-down": sort==="named"})
               span.head-title displayName
         th Model

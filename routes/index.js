@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   var currentPage = 1;
   var q = {};
   var d = {};
-  var sort = req.query.sort?req.query.sort:'pcd';
+  var sort = req.query.sort?req.query.sort:'pc';
   var qstring = '';
   if(req.query.page){
     currentPage = req.query.page;
