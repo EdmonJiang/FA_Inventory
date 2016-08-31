@@ -21,8 +21,8 @@ block content
             button#btn-edit.btn.btn-primary.btn-size(type='button') Edit
             button.btn.btn-info.btn-size.pull-right(type='button', onclick='window.close()') Close
     
-    .alert.alert-success.hidden#edit-success 修改成功！
-    .alert.alert-danger.hidden#edit-failed 修改失败！
+  .alert.alert-success#edit-success(style={display:"none"}) Update successful!
+  .alert.alert-danger#edit-failed(style={display:"none"}) Update failed!
 
   #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
     .modal-dialog(role='document')
@@ -30,9 +30,9 @@ block content
           .modal-header
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               span(aria-hidden='true') &times;        
-            h4#myModalLabel.modal-title 删除确认
+            h4#myModalLabel.modal-title Delete confirmation
           .modal-body
-            | 是否删除计算机 - #{computer.ComputerName}的所有信息？
+            | Do you want to delete all the computer infomation of #{computer.ComputerName}?
           .modal-footer
             a.btn.btn-default(type='button', data-dismiss='modal') No       
             a.btn.btn-default(type='button', href='/delete/'+computer.ComputerName) Yes

@@ -104,7 +104,7 @@ router.get('/details/:cn', function(req, res, next){
             objpc[prop]=details._doc[prop];
           }
         }
-        delete objpc._id;
+        //delete objpc._id;
         res.render('details', {computer: objpc});
       };
       

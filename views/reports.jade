@@ -12,7 +12,19 @@ block content
               | Customize Reports
         #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
           .panel-body
-            a.btn.btn-default(href='/reports/generate') Generate Report
+            .checkbox.check-all
+                label
+                  input#select-all(type="checkbox")
+                  |Select All
+            form#div-report.form.form-horizontal(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
+              .form-group#check-container
+                each item in items
+                  .checkbox.col-xs-6.col-md-4
+                    label
+                      input(type="checkbox",name=item)
+                      =item
+
+              button#create-report.btn.btn-info(type="submit",onsubmit="onProcess()") Generate Report
       .panel.panel-default
         #headingTwo.panel-heading(role='tab')
           h4.panel-title
@@ -41,3 +53,20 @@ block content
                     a.btn.btn-success(href='/reports/download/'+report.filename) Download
                     |&nbsp;&nbsp;
                     a.btn.btn-danger.btn-size(href='/reports/delete/'+report.filename) Delete
+
+  script.
+    $(function(){
+      $('#select-all').click(function () {
+        $('#check-container input[type="checkbox"]').prop('checked', this.checked);
+      });
+      $('#div-report').submit(function(event){
+
+        var btn = $('#create-report');
+        var flag = true;
+        btn.prop('disabled',false); 
+        setInterval(function(){
+          btn.text(flag?"processing ..":"processing ...");
+          flag = !flag;
+        },800);
+      });
+    })

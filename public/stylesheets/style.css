@@ -21,3 +21,9 @@ body {
     line-height: 30px;
     padding-right: 8px;
 }
+.check-all{
+      border-bottom: 1px solid #d0c9c9;
+}
+.check-all label{
+  font-weight: 600 !important;
+}

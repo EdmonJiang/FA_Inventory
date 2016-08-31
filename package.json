@@ -13,6 +13,7 @@
     "fast-csv": "^2.1.0",
     "glob": "^7.0.5",
     "jade": "~1.11.0",
+    "moment": "^2.14.1",
     "mongoose": "^4.5.9",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
