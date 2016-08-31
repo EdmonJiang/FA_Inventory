@@ -1,15 +1,11 @@
 body {
   padding: 0;
   margin: 0;
+  overflow-y: scroll;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 .btn-size {
     width: 78px !important;
-}
-.reports-container{
-  width: 1080px;
-  margin-left: 100px;
-  overflow: hidden;
 }
 .index-filter{
   margin-bottom: 8px;
