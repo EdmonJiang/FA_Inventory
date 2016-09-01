@@ -54,10 +54,10 @@ $(function(){
             $('#btn-save').remove();
         }else{
             
-            console.log('there is some data, return true ------------');            
+            //console.log('there is some data, return true ------------');            
             //data.updated = new Date;
             $.post(window.location.pathname, data, function(res){
-                console.log(res);
+                //console.log(res);
                 if(res === 'successful'){
                     $('#td-asset').html(newAsset);
                     $('#td-acces').html(newAcces);

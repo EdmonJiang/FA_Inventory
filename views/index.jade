@@ -14,11 +14,11 @@ block content
       colgroup
         col(style="width:13%")
         col(style="width:11%")
+        col
         col(style="width:11%")
         col
         col(style="width: 16%")
         col(style="width: 5%")
-        col
         col
       tr
         th
@@ -29,24 +29,24 @@ block content
           a(href="/?"+'sort=' + (sort==='name'?'named':'name')+qstring + '&page='+currentPage)
             i(class={"fa fa-arrow-up": sort==="name"},class={"fa fa-arrow-down": sort==="named"})
               span.head-title displayName
+        th LogonName
         th Model
         th SN
         th OS
         th RAM
         th HDD
-        th Details
 
       each pcinfo in pcinfos
         tr
-          td= pcinfo.ComputerName
+          td
+            a(href='/details/'+pcinfo.ComputerName,target='_blank')= pcinfo.ComputerName
           td= pcinfo.displayName
+          td= pcinfo.LogonName
           td= pcinfo.Model
           td= pcinfo.SN
           td= pcinfo.OS
           td= pcinfo.RAM
           td= pcinfo.HDD
-          td
-            a.btn.btn-info(href='/details/'+pcinfo.ComputerName,target='_blank') View Details
 
     ul.sync-pagination.pagination-sm
     div.page-count: span COUNT: #{count}
