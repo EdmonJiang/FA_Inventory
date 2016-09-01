@@ -17,6 +17,12 @@ block content
                   input#select-all(type="checkbox")
                   |Select All
             form#div-report.form.form-horizontal(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
+              .form-group
+                .col-md-6
+                  select.form-control(name="filter")
+                    option(value="") -- Please Select Company Name --
+                    each company in companies
+                      option(value=company)= company
               .form-group#check-container
                 each item in items
                   .checkbox.col-xs-6.col-md-4

@@ -14,19 +14,23 @@ router.get('/', function(req, res, next){
               created:fs.statSync(item).ctime};
       }
     );
-  
-  res.render('reports', {
-    currentUrl: '/reports', 
-    reports: reports,
-    items: Object.keys(Pcinfo.schema.paths)
-  });
+
+  Pcinfo.find().distinct('company',function(err, docs){
+      res.render('reports', {
+      currentUrl: '/reports', 
+      reports: reports,
+      companies: docs,
+      items: Object.keys(Pcinfo.schema.paths)
+    });
+  })
+
 })
 
 router.get('/download/:filename', function(req, res, next){
   var filename = './public/reports/'+req.params.filename;
   var reports = glob.sync('./public/reports/*',{nodir:true});
-  console.log(reports)
-  console.log(filename)
+  //console.log(reports)
+  //console.log(filename)
   if(reports.indexOf(filename) !== -1){
     res.setHeader('Content-disposition', 'attachment; filename='+req.params.filename);
     res.writeHead(200, {
@@ -40,8 +44,16 @@ router.get('/download/:filename', function(req, res, next){
 })
 
 router.post('/generate', function(req, res, next){
+  //console.log(req.body)
   
   var objFields = {};
+  var objFilter = {};
+
+  if(req.body.filter){
+    objFilter.company = req.body.filter;
+  }
+  delete req.body.filter;
+
   Object.keys(req.body).map(function(item){
     objFields[item] = 1;
   })
@@ -49,8 +61,10 @@ router.post('/generate', function(req, res, next){
   if(objFields.hasOwnProperty('_id') === false){
     objFields._id = 0;
   }
-  console.log(objFields);
-  Pcinfo.find({}).select(objFields).exec(function(err, docs){
+  //console.log(objFilter);
+  //console.log(objFields);
+
+  Pcinfo.find(objFilter).select(objFields).exec(function(err, docs){
       if(err) return next(new Error('can not export pcinfo!'));
 
         var csvStream = csv.format({headers: true});
