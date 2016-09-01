@@ -20,7 +20,7 @@ block content
               .form-group
                 .col-md-6
                   select.form-control(name="filter")
-                    option(value="") -- Please Select Company Name --
+                    option(value="all") -- Please Select Company Name --
                     each company in companies
                       option(value=company)= company
               .form-group#check-container

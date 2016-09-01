@@ -49,7 +49,7 @@ router.post('/generate', function(req, res, next){
   var objFields = {};
   var objFilter = {};
 
-  if(req.body.filter){
+  if(req.body.hasOwnProperty('filter') && req.body.filter !== 'all'){
     objFilter.company = req.body.filter;
   }
   delete req.body.filter;
@@ -61,8 +61,8 @@ router.post('/generate', function(req, res, next){
   if(objFields.hasOwnProperty('_id') === false){
     objFields._id = 0;
   }
-  //console.log(objFilter);
-  //console.log(objFields);
+  // console.log(objFilter);
+  // console.log(objFields);
 
   Pcinfo.find(objFilter).select(objFields).exec(function(err, docs){
       if(err) return next(new Error('can not export pcinfo!'));
