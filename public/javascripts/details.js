@@ -26,7 +26,7 @@ $(function(){
                     elem = $(item).find('td');
                     elem.attr('id','td-warranty');
                     oldWarranty = elem.text();
-                    elem.html('<input id="text-warranty" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldWarranty+'" />')
+                    elem.html('<input id="text-warranty" style="width:500px;height:32px;font-size:16px;" type="date" value="'+oldWarranty+'" />')
                 }else if($(item).find('th').text()==='remark'){
 
                     elem = $(item).find('td');
