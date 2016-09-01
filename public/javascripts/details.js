@@ -43,8 +43,8 @@ $(function(){
             $('#btn-edit').text('Edit');
             $('#td-asset').html(oldAsset);
             $('#td-acces').html(oldAcces);
-            $('#td-warranty').html(oldAcces);
-            $('#td-remark').html(oldAcces);
+            $('#td-warranty').html(oldWarranty);
+            $('#td-remark').html(oldRemark);
             $('#btn-save').remove();
         }
         
