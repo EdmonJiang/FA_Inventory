@@ -1,6 +1,8 @@
 $(function(){
     var oldAsset = '';
     var oldAcces = '';
+    var oldWarranty = '';
+    var oldRemark = '';
     
     $('#btn-edit').on('click', function(){
         
@@ -8,17 +10,29 @@ $(function(){
             $('tr').each(function(value,item){
                 if($(item).find('th').text()==='FixedAssetNO')
                 {
-                    tdAsset = $(item).find('td');
-                    tdAsset.attr('id','td-asset');
-                    oldAsset = tdAsset.text();
-                    tdAsset.html('<input id="text-asset" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldAsset+'" />')
+                    elem = $(item).find('td');
+                    elem.attr('id','td-asset');
+                    oldAsset = elem.text();
+                    elem.html('<input id="text-asset" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldAsset+'" />')
 
                 }else if($(item).find('th').text()==='Accessories'){
 
-                    tdAcces = $(item).find('td');
-                    tdAcces.attr('id','td-acces');
-                    oldAcces = tdAcces.text();
-                    tdAcces.html('<input id="text-acces" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldAcces+'" />')
+                    elem = $(item).find('td');
+                    elem.attr('id','td-acces');
+                    oldAcces = elem.text();
+                    elem.html('<input id="text-acces" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldAcces+'" />')
+                }else if($(item).find('th').text()==='warranty'){
+
+                    elem = $(item).find('td');
+                    elem.attr('id','td-warranty');
+                    oldWarranty = elem.text();
+                    elem.html('<input id="text-warranty" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldWarranty+'" />')
+                }else if($(item).find('th').text()==='remark'){
+
+                    elem = $(item).find('td');
+                    elem.attr('id','td-remark');
+                    oldRemark = elem.text();
+                    elem.html('<input id="text-remark" style="width:500px;height:32px;font-size:16px;" type="text" value="'+oldRemark+'" />')
                 }
                 $('#btn-edit').text('Cancel');
             })
@@ -29,6 +43,8 @@ $(function(){
             $('#btn-edit').text('Edit');
             $('#td-asset').html(oldAsset);
             $('#td-acces').html(oldAcces);
+            $('#td-warranty').html(oldAcces);
+            $('#td-remark').html(oldAcces);
             $('#btn-save').remove();
         }
         
@@ -39,17 +55,27 @@ $(function(){
         var data = {};
         var newAsset = $('#text-asset').val();
         var newAcces = $('#text-acces').val();
+        var newWarranty = $('#text-warranty').val();
+        var newRemark = $('#text-remark').val();
         if(newAsset !== oldAsset){
             data.FixedAssetNO = newAsset;
         }
         if(newAcces !== oldAcces){
             data.Accessories = newAcces;
         }
+        if(newWarranty !== oldWarranty){
+            data.warranty = newWarranty;
+        }
+        if(newRemark !== oldRemark){
+            data.remark = newRemark;
+        }
         //console.log(data);
         if($.isEmptyObject(data)){
             //console.log('there is no data, return false ----------');
             $('#td-asset').html(oldAsset);
             $('#td-acces').html(oldAcces);
+            $('#td-warranty').html(oldWarranty);
+            $('#td-remark').html(oldRemark);
             $('#btn-edit').text('Edit');
             $('#btn-save').remove();
         }else{
@@ -61,6 +87,8 @@ $(function(){
                 if(res === 'successful'){
                     $('#td-asset').html(newAsset);
                     $('#td-acces').html(newAcces);
+                    $('#td-warranty').html(newWarranty);
+                    $('#td-remark').html(newRemark);
                     $('#btn-edit').text('Edit');
                     $('#btn-save').remove();
                     $('#edit-success').css({

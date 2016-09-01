@@ -22,6 +22,8 @@ var pcSchema = mongoose.Schema({
     mail: {type: String, default: ''},
     userPrincipalName: {type: String, default: ''},
     distinguishedName: {type: String, default: ''},
+    warranty: {type: String, default: ''},
+    remark: {type: String, default: ''},
     FixedAssetNO: {type: String, default: ''},
     Accessories: {type: String, default: ''},
     created: {

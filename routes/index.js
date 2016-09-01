@@ -112,7 +112,13 @@ router.get('/details/:cn', function(req, res, next){
 
 router.post('/details/:cn', function(req, res, next){
   var objpc = {};
-  objpc.ComputerName = req.params.cn;
+  if(req.params.cn){
+    objpc.ComputerName = req.params.cn;
+  }else{
+    res.end('failed');
+    return;
+  }
+  
   if(req.body){
     Pcinfo.update(objpc, req.body, {upsert:false}, function(err){
       if(err){
