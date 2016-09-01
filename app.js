@@ -11,6 +11,7 @@ mongoose.connect(configDB.uri);
 
 var routes = require('./routes/index');
 var reports = require('./routes/reports');
+var statistics = require('./routes/statistics');
 var users = require('./routes/users');
 
 var app = express();
@@ -30,12 +31,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res,next){
+  app.locals.currentUrl = req.path;
   res.locals.rootFolder = rootFolder;
   next();
 });
 
 app.use('/', routes);
 app.use('/reports', reports);
+app.use('/statistics', statistics);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

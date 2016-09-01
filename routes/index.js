@@ -23,8 +23,7 @@ router.get('/', function(req, res, next) {
  // sort = objSort[sort];
  // console.log(sort);
   if(req.query.q){
-    // q.push({'ComputerName': new RegExp(req.query.q.trim(), 'i')});
-    // q.push({'displayName': new RegExp(req.query.q.trim(), 'i')});
+
     q.ComputerName = new RegExp(req.query.q.trim(), 'i');
     d.displayName = new RegExp(req.query.q.trim(), 'i');
     //q.SN = new RegExp(req.query.q.trim(), 'i');
@@ -37,10 +36,9 @@ router.get('/', function(req, res, next) {
       .sort(objSort[sort]).skip((currentPage-1)*10).limit(10)
       .exec(function(err, pcinfos){
       if (err){return next(new Error('could not find data!'))};
-      console.log("count is: "+count);
+      //console.log("count is: "+count);
       res.render('index', {
         pcinfos: pcinfos, 
-        currentUrl: '/index',
         currentPage: currentPage,
         count: count,
         keyword: req.query.q,

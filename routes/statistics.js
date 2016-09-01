@@ -5,23 +5,13 @@ var glob = require('glob');
 var csv = require("fast-csv");
 var fs = require('fs');
 var moment = require('moment');
-/* GET reports page. */
+/* GET statistics page. */
 
 router.get('/', function(req, res, next){
-  var reports = glob.sync('./public/reports/*',{nodir:true}).map(
-    function(item){
-      return {filename:item.split('/').slice(-1),
-              created:fs.statSync(item).ctime};
-      }
-    );
 
-  Pcinfo.find().distinct('company',function(err, docs){
-      res.render('reports', {
-      reports: reports,
-      companies: docs,
-      items: Object.keys(Pcinfo.schema.paths)
+      res.render('statistics', {
     });
-  })
+
 
 })
 
@@ -81,7 +71,7 @@ router.post('/generate', function(req, res, next){
 })
 
 router.get('/generate', function(req, res, next){
-  redirect('/reports/');
+  redirect('/reports');
 })
 
 router.get('/delete/:filename', function(req, res, next){
