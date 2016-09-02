@@ -27,3 +27,9 @@ body {
 .check-all label{
   font-weight: 600 !important;
 }
+.filter-select select{
+  margin-bottom: 10px;
+}
+#check-container .checkbox.checkbox{
+  margin-top: -5px;
+}

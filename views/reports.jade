@@ -16,21 +16,24 @@ block content
                 label
                   input#select-all(type="checkbox")
                   |Select All
-            form#div-report.form.form-horizontal(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
-              .form-group
+            .clearfix
+            form#div-report.form.clearfix(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
+              
                 .col-md-6
-                  select.form-control(name="filter")
-                    option(value="all") -- Please Select Company Name --
-                    each company in companies
-                      option(value=company)= company
+                  .form-group
+                    select.form-control(name="filter")
+                      option(value="all") -- Please Select Company Name --
+                      each company in companies
+                        option(value=company)= company
               .form-group#check-container
                 each item in items
                   .checkbox.col-xs-6.col-md-4
                     label
                       input(type="checkbox",name=item)
                       =item
-
-              button#create-report.btn.btn-primary(type="submit",onsubmit="onProcess()") Generate Report
+            .clearfix
+            .col-xs-6.col-md-4
+                button#create-report.btn.btn-primary(type="submit",onsubmit="onProcess()") Generate Report
       .panel.panel-default
         #headingTwo.panel-heading(role='tab')
           h4.panel-title
