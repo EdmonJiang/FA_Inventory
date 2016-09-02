@@ -4,3 +4,59 @@ block content
   include nav.jade
   .container
     h1 Statistics
+    .panel.panel-default
+      .panel-body.filter-select
+        form.form#filter-form
+          h5 Filter:
+          .col-sm-6.col-md-4
+            select.form-control(name="company")
+              option(value="") -- company --
+              each company in companies
+                option(value=company)= company
+          .col-sm-6.col-md-4
+            select.form-control(name="department")
+              option(value="") -- department --
+                each department in departments
+                  option(value=department)= department
+          .col-sm-6.col-md-4
+            select.form-control(name="Vendor")
+              option(value="") -- Vendor --
+                each vendor in vendors
+                  option(value=vendor)= vendor
+          .col-sm-6.col-md-4
+            select.form-control(name="OS")
+              option(value="") -- OS --
+                each os in oss
+                  option(value=os)= os
+          .col-sm-6.col-md-4
+            select.form-control(name="CPU")
+              option(value="") -- CPU --
+                each cpu in cpus
+                  option(value=cpu)= cpu
+          .col-sm-6.col-md-4
+            select.form-control(name="RAM")
+              option(value="") -- RAM --
+                each ram in rams
+                  option(value=ram)= ram
+          h5 Group:
+          .col-sm-6.col-md-4
+            select.form-control(name="company")
+              option(value="") -- group by --
+              each group in groups
+                option(value=group)= group
+
+          .clearfix
+          .col-xs-6.col-md-4
+              button#btn-filter.btn.btn-primary(type="button") aggregate
+              span
+                |&nbsp;&nbsp;
+                input(type="checkbox", name="count")
+                strong
+                  |&nbsp;Count
+
+    
+    .panel.panel-default
+      .panel-heading Results
+      .panel-body
+        #results-table
+  script(src='/javascripts/filters.js')

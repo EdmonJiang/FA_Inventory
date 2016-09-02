@@ -9,81 +9,40 @@ var moment = require('moment');
 
 router.get('/', function(req, res, next){
 
+  Pcinfo.find().distinct('company',function(err, companies){
+    Pcinfo.find().distinct('department',function(err, departments){
+      Pcinfo.find().distinct('Vendor',function(err, vendors){
+        Pcinfo.find().distinct('OS',function(err, oss){
+          Pcinfo.find().distinct('CPU',function(err, cpus){
+            Pcinfo.find().distinct('RAM',function(err, rams){
       res.render('statistics', {
+        companies: companies,
+        departments: departments,
+        vendors: vendors,
+        oss: oss,
+        cpus: cpus,
+        rams: rams,
+        groups: Object.keys(Pcinfo.schema.paths)
     });
-
-
-})
-
-router.get('/download/:filename', function(req, res, next){
-  var filename = './public/reports/'+req.params.filename;
-  var reports = glob.sync('./public/reports/*',{nodir:true});
-  //console.log(reports)
-  //console.log(filename)
-  if(reports.indexOf(filename) !== -1){
-    res.setHeader('Content-disposition', 'attachment; filename='+req.params.filename);
-    res.writeHead(200, {
-        'Content-Type': 'text/csv'
-    });
-    fs.createReadStream(filename).pipe(res);
-  }else{
-    res.end("Sorry, file does not exist!");
-  }
-  
-})
-
-router.post('/generate', function(req, res, next){
-  //console.log(req.body)
-  
-  var objFields = {};
-  var objFilter = {};
-
-  if(req.body.hasOwnProperty('filter') && req.body.filter !== 'all'){
-    objFilter.company = req.body.filter;
-  }
-  delete req.body.filter;
-
-  Object.keys(req.body).map(function(item){
-    objFields[item] = 1;
   })
-  
-  if(objFields.hasOwnProperty('_id') === false){
-    objFields._id = 0;
-  }
-  // console.log(objFilter);
-  // console.log(objFields);
+   })
+    })
+     })
+      })
+       })
 
-  Pcinfo.find(objFilter).select(objFields).exec(function(err, docs){
-      if(err) return next(new Error('can not export pcinfo!'));
-
-        var csvStream = csv.format({headers: true});
-        var timestamp = moment(new Date()).format('YYYY-MM-DD-HHmmssSS')+".csv";
-        var filepath = './public/temp/'+timestamp;
-
-        var ws = fs.createWriteStream(filepath);
-        ws.on("finish", function(){
-          fs.renameSync(filepath, './public/reports/'+timestamp);
-          res.redirect('/reports/');
-        });
-        csv.write(JSON.parse(JSON.stringify(docs)), {headers: true}).pipe(ws);
-    }
-  )
 })
 
-router.get('/generate', function(req, res, next){
-  redirect('/reports');
+
+router.post('/', function(req, res, next){
+  console.log(req.body);
+
+  Pcinfo.aggregate([{$match:{RAM:"32 GB"}},{$group:{_id:{department:"$department",user:"$displayName"}}}])
+    .exec(function(err, docs){
+
+      res.send(JSON.stringify(docs));
+    })
 })
 
-router.get('/delete/:filename', function(req, res, next){
-  var filename = './public/reports/'+req.params.filename;
-  var reports = glob.sync('./public/reports/*',{nodir:true});
-
-  if(reports.indexOf(filename) !== -1){
-    fs.unlinkSync(filename);
-    res.redirect('/reports/');
-  }else{
-    res.end("Sorry, file does not exist!");
-  }
-})
 
 module.exports = router;
