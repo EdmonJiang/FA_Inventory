@@ -10,38 +10,43 @@ block content
           h5 Filter:
           .col-sm-6.col-md-4
             select.form-control(name="company")
-              option(value="") -- company --
+              option(value="") -- Filter by Company --
               each company in companies
                 option(value=company)= company
           .col-sm-6.col-md-4
             select.form-control(name="department")
-              option(value="") -- department --
+              option(value="") -- Filter by Department --
                 each department in departments
                   option(value=department)= department
           .col-sm-6.col-md-4
             select.form-control(name="Vendor")
-              option(value="") -- Vendor --
+              option(value="") -- Filter by Vendor --
                 each vendor in vendors
                   option(value=vendor)= vendor
           .col-sm-6.col-md-4
             select.form-control(name="OS")
-              option(value="") -- OS --
+              option(value="") -- Filter by OS --
                 each os in oss
                   option(value=os)= os
           .col-sm-6.col-md-4
             select.form-control(name="CPU")
-              option(value="") -- CPU --
+              option(value="") -- Filter by CPU --
                 each cpu in cpus
                   option(value=cpu)= cpu
           .col-sm-6.col-md-4
             select.form-control(name="RAM")
-              option(value="") -- RAM --
+              option(value="") -- Filter by RAM --
                 each ram in rams
                   option(value=ram)= ram
           h5 Group:
           .col-sm-6.col-md-4
-            select.form-control(name="company")
-              option(value="") -- group by --
+            select.form-control(name="group")
+              option(value="") --  Group by  --
+              each group in groups
+                option(value=group)= group
+          .col-sm-6.col-md-4
+            select.form-control(name="group")
+              option(value="") --  Group by  --
               each group in groups
                 option(value=group)= group
 
@@ -58,5 +63,5 @@ block content
     .panel.panel-default
       .panel-heading Results
       .panel-body
-        #results-table
+        table.table.table-bordered.table-striped.table-hover#results-table
   script(src='/javascripts/filters.js')

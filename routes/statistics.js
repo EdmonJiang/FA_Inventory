@@ -35,11 +35,39 @@ router.get('/', function(req, res, next){
 
 
 router.post('/', function(req, res, next){
-  console.log(req.body);
+  // console.log(req.body);
+  var objgroupid = {};
+  var objgroup = {};
+  var objfilter = {};
+  req.body.group.forEach(function(value){
+    if(value===''){
+      return false;
+    }else{
+      objgroupid[value] = "$"+value;
+    }
+  })
 
-  Pcinfo.aggregate([{$match:{RAM:"32 GB"}},{$group:{_id:{department:"$department",user:"$displayName"}}}])
+  if(req.body.hasOwnProperty('count')){
+    objgroup._id = objgroupid;
+    objgroup.total = {$sum:1};
+    delete req.body.count;
+  }else{
+    objgroup._id = objgroupid;
+  }
+  delete req.body.group;
+  
+  Object.keys(req.body).forEach(function(value){
+    if(req.body[value]===''){
+      return false;
+    }else{
+      objfilter[value] = req.body[value];
+    }
+  })
+
+  Pcinfo.aggregate([{$match: objfilter},{$group:objgroup}])
     .exec(function(err, docs){
-
+      if(err) return next(err)
+      console.log(docs)
       res.send(JSON.stringify(docs));
     })
 })
