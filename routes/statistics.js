@@ -39,6 +39,7 @@ router.post('/', function(req, res, next){
   var objgroupid = {};
   var objgroup = {};
   var objfilter = {};
+  var limit = 1000;
   req.body.group.forEach(function(value){
     if(value===''){
       return false;
@@ -54,6 +55,13 @@ router.post('/', function(req, res, next){
   }else{
     objgroup._id = objgroupid;
   }
+
+  if(req.body.limit === ''){
+    delete req.body.limit;
+  }else{
+    limit = parseInt(req.body.limit);
+    delete req.body.limit;
+  }
   delete req.body.group;
   
   Object.keys(req.body).forEach(function(value){
@@ -64,10 +72,10 @@ router.post('/', function(req, res, next){
     }
   })
 
-  Pcinfo.aggregate([{$match: objfilter},{$group:objgroup}])
+  Pcinfo.aggregate([{$match: objfilter},{$group:objgroup},{$limit:limit}])
     .exec(function(err, docs){
       if(err) return next(err)
-      console.log(docs)
+      //console.log(docs)
       res.send(JSON.stringify(docs));
     })
 })

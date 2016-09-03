@@ -49,6 +49,20 @@ block content
               option(value="") --  Group by  --
               each group in groups
                 option(value=group)= group
+          .col-sm-6.col-md-4
+            select.form-control(name="limit")
+              option(value="") --  Limit results  --
+              option(value="1") 1
+              option(value="5") 5
+              option(value="10") 10
+              option(value="20") 20
+              option(value="50") 50
+              option(value="100") 100
+              option(value="200") 200
+              option(value="300") 300
+              option(value="400") 400
+              option(value="500") 500
+              option(value="600") 600
 
           .clearfix
           .col-xs-6.col-md-4
@@ -61,7 +75,11 @@ block content
 
     
     .panel.panel-default
-      .panel-heading Results
+      .panel-heading
+        |Results:&nbsp;
+        span#results-count
+        button#export2excel.pull-right(type="button",style={display:"none"}) Export to excel
       .panel-body
-        table.table.table-bordered.table-striped.table-hover#results-table
+        table#results-table.table.table-bordered.table-striped.table-hover
+  script(src='/javascripts/table2download.js')
   script(src='/javascripts/filters.js')
