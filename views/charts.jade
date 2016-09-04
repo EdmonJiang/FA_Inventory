@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  include nav.jade
+  .container
+    h1 Charts
+    .row.div-select
+      .col-md-4
+        select#select-chart.form-control
+          option(value="company") Laptop Distribution of Companies
+    #canvasDiv-company
+
+  script(src='/javascripts/ichart.1.2.1.min.js')
+  script(src='/javascripts/icharts.js')
