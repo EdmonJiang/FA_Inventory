@@ -43,7 +43,7 @@ router.get('/download/:filename', function(req, res, next){
 })
 
 router.post('/generate', function(req, res, next){
-  //console.log(req.body)
+  console.log(req.body)
   
   var objFields = {};
   var objFilter = {};
@@ -71,6 +71,7 @@ router.post('/generate', function(req, res, next){
         var filepath = './public/temp/'+timestamp;
 
         var ws = fs.createWriteStream(filepath);
+        ws.write("\ufeff");
         ws.on("finish", function(){
           fs.renameSync(filepath, './public/reports/'+timestamp);
           res.redirect('/reports/');

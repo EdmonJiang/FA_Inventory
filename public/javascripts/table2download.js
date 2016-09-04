@@ -18,7 +18,7 @@
         if (settings.format == "csv") {        
             return this.each(function() {
                 export_id++;
-                var csv = "";
+                var csv = "\ufeff";
                 // loop each row of the table
                 $(this).find("tr").each(function () {
                     // loop each td cell of the row

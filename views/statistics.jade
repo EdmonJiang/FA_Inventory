@@ -66,7 +66,7 @@ block content
 
           .clearfix
           .col-xs-6.col-md-4
-              button#btn-filter.btn.btn-primary(type="button") aggregate
+              button#btn-filter.btn.btn-primary(type="button") Aggregate
               span
                 |&nbsp;&nbsp;
                 input(type="checkbox", name="count")
@@ -78,7 +78,8 @@ block content
       .panel-heading
         |Results:&nbsp;
         span#results-count
-        button#export2excel.pull-right(type="button",style={display:"none"}) Export to excel
+        input#txt-search(type="text",placeholder="Search results")
+        button#export2excel.pull-right(type="button",style={display:"none"}) Export to csv
       .panel-body
         table#results-table.table.table-bordered.table-striped.table-hover
   script(src='/javascripts/table2download.js')

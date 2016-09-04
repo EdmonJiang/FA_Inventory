@@ -54,6 +54,15 @@ $(function(){
         })
     })
 
+    $("#txt-search").keyup(function(e){
+            var filtername = $(this).val();
+            if( filtername != ""){
+            $('table tbody tr').hide().filter(":contains('"+filtername+"')").show();
+            }else{
+            $('table#results-table tbody tr').show();
+            }
+    })
+
     $('#export2excel').on('click', function(){
 
         $( "#results-table" ).table_download({

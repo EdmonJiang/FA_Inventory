@@ -17,8 +17,8 @@ block content
                   input#select-all(type="checkbox")
                   |Select All
             .clearfix
-            form#div-report.form.clearfix(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
-              
+            form#div-report.form(action="/reports/generate",method="post",enctype="application/x-www-form-urlencoded")
+              .clearfix
                 .col-md-6
                   .form-group
                     select.form-control(name="filter")
@@ -31,9 +31,9 @@ block content
                     label
                       input(type="checkbox",name=item)
                       =item
-            .clearfix
-            .col-xs-6.col-md-4
-                button#create-report.btn.btn-primary(type="submit",onsubmit="onProcess()") Generate Report
+              .clearfix
+              .col-xs-6.col-md-4
+                button#create-report.btn.btn-primary(type="submit") Generate Report
       .panel.panel-default
         #headingTwo.panel-heading(role='tab')
           h4.panel-title
@@ -69,7 +69,7 @@ block content
         $('#check-container input[type="checkbox"]').prop('checked', this.checked);
       });
       $('#div-report').submit(function(event){
-
+        
         var btn = $('#create-report');
         var flag = true;
         btn.prop('disabled',false); 

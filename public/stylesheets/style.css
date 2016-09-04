@@ -33,3 +33,11 @@ body {
 #check-container .checkbox.checkbox{
   margin-top: -5px;
 }
+#results-count{
+    display: inline-block;
+    width: 20px;
+}
+#txt-search{
+  display: inline-block;
+  margin-left: 100px;
+}
