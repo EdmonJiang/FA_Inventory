@@ -113,10 +113,10 @@ $(function(){
 									position:'bottom',	
 									start_scale:0,
 									end_scale:100,
-									scale_space:30,
+									scale_space:40,
 									listeners:{
 									parseText:function(t,x,y){
-										return {text:t+"%"}
+										return {text:t+" pcs"}
 									}
 									}
 							}]
@@ -146,7 +146,7 @@ $(function(){
 						position:'left',//配置左值轴	
 						start_scale:0,//设置开始刻度为0
 						end_scale:26,//设置结束刻度为26
-						scale_space:10,//设置刻度间距
+						scale_space:20,//设置刻度间距
 						listeners:{//配置事件
 						parseText:function(t,x,y){//设置解析值轴文本
 							return {text:t+" pcs"}
