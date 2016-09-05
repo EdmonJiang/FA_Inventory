@@ -39,7 +39,6 @@ router.post('/', function(req, res, next){
   var objgroupid = {};
   var objgroup = {};
   var objfilter = {};
-  var limit = 1000;
   
   if(Array.isArray(req.body.group)){
     req.body.group.forEach(function(value){
