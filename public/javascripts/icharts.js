@@ -133,6 +133,8 @@ $(function(){
 	}
 
 	function drawColumn2D(data){
+		
+		data = sortRAM(data);
 		var chart = new iChart.Column2D({
 			render : 'canvasDiv',//渲染的Dom目标,canvasDiv为Dom的ID
 			data: data,//绑定数据
@@ -167,4 +169,21 @@ $(function(){
         })
         return sColor;
     }
+	function sortRAM(data){
+		var arr = data.map(function(value){return value.name})
+		arr.sort(function(a,b){return parseInt(a)>parseInt(b)?1:-1})
+		newData = arr.map(function(value){
+			var newitem = {};
+			data.forEach(
+				function(item){
+					//console.log('item.name: '+item.name+' value:'+value)
+					if(item.name == value){
+						newitem = item;
+					}
+				})
+				return newitem;
+			}
+		)
+		return newData;
+	}
 });
