@@ -4,7 +4,7 @@ $(function(){
         $.post(window.location.pathname, $('#filter-form').serialize(), function(res){
             $('#results-table').html('');
             var data = JSON.parse(res);
-
+            console.log(data)
             if(Object.keys(data[0]._id).length === 0){
                 $('#results-count').text(0);
                 $('#export2excel').hide();

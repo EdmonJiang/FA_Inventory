@@ -35,18 +35,23 @@ router.get('/', function(req, res, next){
 
 
 router.post('/', function(req, res, next){
-  // console.log(req.body);
+  console.log(req.body);
   var objgroupid = {};
   var objgroup = {};
   var objfilter = {};
   var limit = 1000;
-  req.body.group.forEach(function(value){
-    if(value===''){
-      return false;
-    }else{
-      objgroupid[value] = "$"+value;
-    }
-  })
+  
+  if(Array.isArray(req.body.group)){
+    req.body.group.forEach(function(value){
+      if(value===''){
+        return false;
+      }else{
+        objgroupid[value] = "$"+value;
+      }
+    })
+  }else{
+      return;
+  }
 
   if(req.body.hasOwnProperty('count')){
     objgroup._id = objgroupid;
