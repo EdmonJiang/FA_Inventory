@@ -1,15 +1,15 @@
 $(function(){
     var objQuery ={
 		company: {
-				q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=company&group=&limit=&count=on",
+				q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=company&group=",
 				type: drawDonut2D
 			},
 		os:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=OS&group=&limit=&count=on",
+			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=OS&group=",
 			type: drawBar2D
 		},
 		ram:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=RAM&group=&limit=&count=on",
+			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=RAM&group=",
 			type: drawColumn2D
 		}
 	}

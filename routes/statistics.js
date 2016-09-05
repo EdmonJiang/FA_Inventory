@@ -53,20 +53,11 @@ router.post('/', function(req, res, next){
       return;
   }
 
-  if(req.body.hasOwnProperty('count')){
-    objgroup._id = objgroupid;
-    objgroup.total = {$sum:1};
-    delete req.body.count;
-  }else{
-    objgroup._id = objgroupid;
-  }
+  objgroup._id = objgroupid;
+  objgroup.total = {$sum:1};
+  //delete req.body.count;
+    // delete req.body.limit;
 
-  if(req.body.limit === ''){
-    delete req.body.limit;
-  }else{
-    limit = parseInt(req.body.limit);
-    delete req.body.limit;
-  }
   delete req.body.group;
   
   Object.keys(req.body).forEach(function(value){
@@ -77,7 +68,7 @@ router.post('/', function(req, res, next){
     }
   })
 
-  Pcinfo.aggregate([{$match: objfilter},{$group:objgroup},{$limit:limit}])
+  Pcinfo.aggregate([{$match: objfilter},{$group:objgroup}])
     .exec(function(err, docs){
       if(err) return next(err)
       //console.log(docs)

@@ -50,30 +50,15 @@ block content
               each group in groups
                 option(value=group)= group
           .col-sm-6.col-md-4
-            select.form-control(name="limit")
-              option(value="") --  Limit results  --
-              option(value="1") 1
-              option(value="5") 5
-              option(value="10") 10
-              option(value="20") 20
-              option(value="50") 50
-              option(value="100") 100
-              option(value="200") 200
-              option(value="300") 300
-              option(value="400") 400
-              option(value="500") 500
-              option(value="600") 600
+            select.form-control(name="group")
+              option(value="") --  Group by  --
+              each group in groups
+                option(value=group)= group
 
           .clearfix
           .col-xs-6.col-md-4
-              button#btn-filter.btn.btn-primary(type="button") Aggregate
-              span
-                |&nbsp;&nbsp;
-                input(type="checkbox", name="count")
-                strong
-                  |&nbsp;Count
+              button#btn-filter.btn.btn-primary(type="button") Query
 
-    
     .panel.panel-default
       .panel-heading
         |Results:&nbsp;
