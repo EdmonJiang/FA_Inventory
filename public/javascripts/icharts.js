@@ -15,6 +15,10 @@ $(function(){
 		model:{
 			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=Model&group=&group=",
 			type: drawMultiColum2D
+		},
+		cpu:{
+			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=CPU&group=&group=",
+			type: drawBar2DTop
 		}
 	}
 	ajaxData(objQuery.company.q, objQuery.company.type);
@@ -151,6 +155,8 @@ $(function(){
 					},
 			width : 1400,//设置宽度，默认单位为px
 			height : 400,//设置高度，默认单位为px
+			animation : true,//开启过渡动画
+			animation_duration:800,//800ms完成动画
 			shadow:true,//激活阴影
 			shadow_color:'#c7c7c7',//设置阴影颜色
 			column_space: 10,
@@ -204,7 +210,7 @@ $(function(){
 					listeners:{
 						 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
 						parseText:function(tip,name,value,text,i){
-							//将数字进行千位格式化
+							//将数字进行百位格式化
 							var f = new String(value);
 							f = f.split("").reverse().join("").replace(/(\d{3})/g,"$1,").split("").reverse();
 							if(f[0]==','){
@@ -275,6 +281,44 @@ $(function(){
 			}));
 			
 			chart.draw();
+	}
+
+	function drawBar2DTop(data){
+		data.sort(function(a,b){return b.value - a.value});
+		data = data.slice(0,10);
+		new iChart.Bar2D({
+			render : 'canvasDiv',
+			background_color : '#EEEEEE',
+			data : data,
+			title : 'CPU TOP10',
+			footnote : 'Data from ACBSIT Nanjing',
+			width : 1400,
+			height : 450,
+			coordinate : {
+				width : 840,
+				height : 360,
+				axis : {
+					width : [0, 0, 1, 1]
+				},
+				scale : [{
+					position : 'bottom',
+					start_scale : 0,
+					scale_space : 2
+				}]
+			},
+			animation : true,
+			sub_option : {
+				listeners : {
+					parseText : function(r, t) {
+						return t + " pcs";
+					}
+				}
+			},
+			legend : {
+				enable : false
+			}
+		}).draw();
+
 	}
 
     function getColor(){
