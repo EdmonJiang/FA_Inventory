@@ -14,6 +14,7 @@ $(function(){
             }
              
             if(data.length>0){
+                data.sort(function(a,b){return a.total - b.total});
                 var tbl_head = document.createElement('thead');
                 var tbl_body = document.createElement('tbody');
                 var tbl_row = tbl_head.insertRow();
@@ -48,8 +49,19 @@ $(function(){
 
                 document.getElementById('results-table').appendChild(tbl_head);
                 document.getElementById('results-table').appendChild(tbl_body);
+                $('#results-table thead th:last')
+                    .css({"cursor":"pointer"})
+                    .html('<span id="sort-arrow" class="glyphicon glyphicon-arrow-up"></span>total')
+                    .on('click', function(){
+                        $('#results-table tbody').html($('#results-table tbody tr').toArray().reverse());
+                        if($('#sort-arrow').hasClass('glyphicon-arrow-up')){
+                            $('#sort-arrow').removeClass('glyphicon-arrow-up').addClass('glyphicon-arrow-down');
+                        }else{
+                            $('#sort-arrow').removeClass('glyphicon-arrow-down').addClass('glyphicon-arrow-up');
+                        }
+                    });
                 $('#export2excel').show();
-
+                
             }
         })
     })
