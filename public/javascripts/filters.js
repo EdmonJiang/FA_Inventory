@@ -60,7 +60,7 @@ $(function(){
             $('table tbody tr').hide().filter(":contains('"+filtername+"')").show();
             }else{
             $('table#results-table tbody tr').show();
-            }
+        }
     })
 
     $('#export2excel').on('click', function(){
