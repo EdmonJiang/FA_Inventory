@@ -9,16 +9,17 @@ $(function(){
                 value: item.total,
                 color: getColor()
             }
-            console.log(oitem)
+            //console.log(oitem)
             data.push(oitem);
         })
 
-        				var chart = new iChart.Donut2D({
+        		var chart = new iChart.Donut2D({
 					render : 'canvasDiv-company',
 					data: data,
 					title : {
 						text : 'Laptop Distribution of Companies',
-						color : '#3e576f'
+						color : '#3e576f',
+						offsety: -15
 					},
 					center : {
 						text:'100%',
