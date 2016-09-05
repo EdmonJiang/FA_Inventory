@@ -11,6 +11,10 @@ $(function(){
 		ram:{
 			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=RAM&group=",
 			type: drawColumn2D
+		},
+		model:{
+			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=Model&group=&group=",
+			type: drawMultiColum2D
 		}
 	}
 	ajaxData(objQuery.company.q, objQuery.company.type);
@@ -44,13 +48,13 @@ $(function(){
 					title : {
 						text : 'Laptop Distribution of Companies',
 						color : '#3e576f',
-						offsety: -15
 					},
 					footnote : {
 						text : 'Data from ACBSIT Nanjing',
 						color : '#486c8f',
 						fontsize : 11,
-						padding : '0 38'
+						padding : '0 38',
+						offsetx: -50
 					},
 					center : {
 						text:'100%',
@@ -107,13 +111,12 @@ $(function(){
 						width : 1400,
 						height : 400,
 						coordinate:{
-							width:640,
-							height:280,
+							width:740,
+							height:380,
 							scale:[{
 									position:'bottom',	
 									start_scale:0,
-									end_scale:100,
-									scale_space:40,
+									scale_space:20,
 									listeners:{
 									parseText:function(t,x,y){
 										return {text:t+" pcs"}
@@ -139,15 +142,23 @@ $(function(){
 			render : 'canvasDiv',//渲染的Dom目标,canvasDiv为Dom的ID
 			data: data,//绑定数据
 			title : 'Quantity between RAMs',//设置标题
+			footnote : {
+						text : 'Data from ACBSIT Nanjing',
+						color : '#486c8f',
+						fontsize : 11,
+						padding : '0 38',
+						offsetx: 50,
+					},
 			width : 1400,//设置宽度，默认单位为px
 			height : 400,//设置高度，默认单位为px
 			shadow:true,//激活阴影
 			shadow_color:'#c7c7c7',//设置阴影颜色
+			column_space: 10,
+			column_width : 70,
 			coordinate:{//配置自定义坐标轴
 				scale:[{//配置自定义值轴
 						position:'left',//配置左值轴	
 						start_scale:0,//设置开始刻度为0
-						end_scale:26,//设置结束刻度为26
 						scale_space:20,//设置刻度间距
 						listeners:{//配置事件
 						parseText:function(t,x,y){//设置解析值轴文本
@@ -161,6 +172,111 @@ $(function(){
 		chart.draw();
 
 	}
+
+	function drawMultiColum2D(data){
+		data.sort(function(a,b){return b.value - a.value});
+		var chart = new iChart.Column2D({
+				render : 'canvasDiv',
+				data : data,
+				title : {
+					text : 'Quantity between Models',
+					color : '#3e576f'
+				},
+				footnote : {
+					text : 'Data from ACBSIT Nanjing',
+					color : '#909090',
+					fontsize : 11,
+					offsety: -100,
+					offsetx: -50
+				},
+				width : 1400,
+				height : 650,
+				offsety: -100,
+				label : {
+					fontsize:11,
+					textAlign:'right',
+					textBaseline:'middle',
+					rotate:-45,
+					color : '#666666'
+				},
+				tip:{
+					enable:true,
+					listeners:{
+						 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+						parseText:function(tip,name,value,text,i){
+							//将数字进行千位格式化
+							var f = new String(value);
+							f = f.split("").reverse().join("").replace(/(\d{3})/g,"$1,").split("").reverse();
+							if(f[0]==','){
+								f.shift();
+							}	
+							f = f.join("");
+							
+							return name+"<br/>"+f+"pcs<br/>proportion of the total:<br/>"+(value/this.get('total') * 100).toFixed(2)+ '%';
+						}
+					}
+				},
+				shadow : true,
+				shadow_blur : 2,
+				shadow_color : '#aaaaaa',
+				shadow_offsetx : 1,
+				shadow_offsety : 0,
+				column_space: 5,
+				column_width : 100,
+				sub_option : {
+					label : false,
+					border : {
+						width : 2,
+						color : '#ffffff'
+					}
+				},
+				coordinate : {
+					background_color : null,
+					grid_color : '#c0c0c0',
+					width : 960,
+					height:300,
+					axis : {
+						color : '#c0d0e0',
+						width : [0, 0, 1, 0]
+					},
+					scale : [{
+						position : 'left',
+						start_scale : 0,
+						scale_space : 5,
+						scale_width: 9,
+						scale_enable : false,
+						label : {
+							fontsize:11,
+							color : '#666666'
+						},
+						listeners:{
+							parseText:function(t,x,y){
+								return {text:t}
+							}
+						 }
+					}]
+				}
+			});
+			
+			//利用自定义组件构造左侧说明文本
+			chart.plugin(new iChart.Custom({
+					drawFn:function(){
+						//计算位置
+						var coo = chart.getCoordinate(),
+							x = coo.get('originx'),
+							y = coo.get('originy');
+						//在左上侧的位置，渲染一个单位的文字
+						chart.target.textAlign('start')
+						.textBaseline('bottom')
+						.textFont('600 11px Verdana')
+						.fillText('Quantity(pcs)',x-40,y-10,false,'#6d869f');
+						
+					}
+			}));
+			
+			chart.draw();
+	}
+
     function getColor(){
         var arrColor = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
         var sColor = '#';
