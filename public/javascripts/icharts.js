@@ -122,7 +122,7 @@ $(function(){
 							scale:[{
 									position:'bottom',	
 									start_scale:0,
-									scale_space:20,
+									scale_space:40,
 									listeners:{
 									parseText:function(t,x,y){
 										return {text:t+" pcs"}
