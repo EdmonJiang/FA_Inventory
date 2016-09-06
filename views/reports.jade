@@ -24,7 +24,8 @@ block content
                     select.form-control(name="filter")
                       option(value="all") -- Please Select Company Name --
                       each company in companies
-                        option(value=company)= company
+                        if company
+                          option(value=company)= company
               .form-group#check-container
                 each item in items
                   .checkbox.col-xs-6.col-md-4
