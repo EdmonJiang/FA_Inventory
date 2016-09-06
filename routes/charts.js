@@ -6,7 +6,12 @@ var moment = require('moment');
 /* GET statistics page. */
 
 router.get('/', function(req, res, next){
-  res.render('charts',{});
+
+  Pcinfo.find().distinct('company',function(err, docs){
+      res.render('charts', {
+          companies: docs,
+      });
+  })
 })
 
 module.exports = router;

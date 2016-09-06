@@ -12,6 +12,12 @@ block content
           option(value="ram") Quantity between RAMs
           option(value="model") Quantity between Models
           option(value="cpu") CPU Top 10
+      .col-md-6
+        select#company-chart.form-control
+          option(value="") -- Please Select Company Name --
+          each company in companies
+            option(value=company)= company
+
   #canvasDiv
 
   script(src='/javascripts/ichart.1.2.1.min.js')

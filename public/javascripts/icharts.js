@@ -1,23 +1,23 @@
 $(function(){
     var objQuery ={
 		company: {
-				q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=company&group=",
+				q:"department=&Vendor=&OS=&CPU=&RAM=&group=company&group=&company=",
 				type: drawDonut2D
 			},
 		os:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=OS&group=",
+			q:"department=&Vendor=&OS=&CPU=&RAM=&group=OS&group=&company=",
 			type: drawBar2D
 		},
 		ram:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=RAM&group=",
+			q:"department=&Vendor=&OS=&CPU=&RAM=&group=RAM&group=&company=",
 			type: drawColumn2D
 		},
 		model:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=Model&group=&group=",
+			q:"department=&Vendor=&OS=&CPU=&RAM=&group=Model&group=&group=&company=",
 			type: drawMultiColum2D
 		},
 		cpu:{
-			q:"company=&department=&Vendor=&OS=&CPU=&RAM=&group=CPU&group=&group=",
+			q:"department=&Vendor=&OS=&CPU=&RAM=&group=CPU&group=&group=&company=",
 			type: drawBar2DTop
 		}
 	}
@@ -26,6 +26,10 @@ $(function(){
 	$('#select-chart').change(function(){
 		var objQ = objQuery[$(this).val()];
 		ajaxData(objQ.q, objQ.type);
+	})
+	$('#company-chart').change(function(){
+		var objQ = objQuery[$('#select-chart').val()];
+		ajaxData(objQ.q+$(this).val(), objQ.type);
 	})
 
 	function ajaxData(req, fnDraw){
