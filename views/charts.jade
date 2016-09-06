@@ -20,5 +20,19 @@ block content
 
   #canvasDiv
 
+  #chart-Modal.modal.fade(tabindex="-1",role="dialog",aria-labelledby="myModalLabel",aria-hidden="true")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button",data-dismiss="modal")
+            span(aria-hidden="true") &times;
+            span.sr-only Close
+          h4#myModalLabel.modal-title OS
+        .modal-body
+          table#chart-table.table
+        .modal-footer
+          button.btn.btn-default(type="button",data-dismiss="modal") Close
+
   script(src='/javascripts/ichart.1.2.1.min.js')
+  script(src='/javascripts/createTable.js')
   script(src='/javascripts/icharts.js')

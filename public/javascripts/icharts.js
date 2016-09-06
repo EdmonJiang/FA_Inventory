@@ -33,6 +33,7 @@ $(function(){
 	})
 
 	function ajaxData(req, fnDraw){
+		
 		$.post('/statistics/', req, function(res){
 			var response = JSON.parse(res);
 			var data = [];
@@ -47,6 +48,19 @@ $(function(){
 			})
 			fnDraw(data);
     	})
+	}
+	function showModal(req){
+		$.post('/statistics/', req, function(res){
+			$('#chart-table').html('');
+            var data = JSON.parse(res);
+            //console.log(data)
+            if(Object.keys(data[0]._id).length === 0){
+                return;
+            }else{
+				createTable($('#chart-table')[0], data);
+				$('#chart-Modal').modal({keyboard: true});
+            }
+		})
 	}
 //company   
 	function drawDonut2D(data){
@@ -150,7 +164,10 @@ $(function(){
 								 * m:额外参数
 								 */
 								click:function(r,e,m){
-									alert(r.get('name')+' '+r.get('value'));
+									var q = "department=&Vendor=&OS="+r.get('name')+"&CPU=&RAM=&group=department&group=displayName&company="
+									$('#myModalLabel').text(r.get('name'));
+									showModal(q);
+									//alert(r.get('name')+' '+r.get('value'));
 								}
 							}
 						}
