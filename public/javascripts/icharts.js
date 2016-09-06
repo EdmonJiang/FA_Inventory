@@ -164,7 +164,7 @@ $(function(){
 								 * m:额外参数
 								 */
 								click:function(r,e,m){
-									var q = "department=&Vendor=&OS="+r.get('name')+"&CPU=&RAM=&group=department&group=displayName&company="
+									var q = "department=&Vendor=&OS="+r.get('name')+"&CPU=&RAM=&group=department&group=ComputerName&group=displayName&company="
 									$('#myModalLabel').text(r.get('name'));
 									showModal(q);
 									//alert(r.get('name')+' '+r.get('value'));
@@ -218,7 +218,7 @@ $(function(){
 					 * m:额外参数
 					 */
 					click:function(r,e,m){
-						var q = "department=&Vendor=&OS=&CPU=&RAM="+r.get('name')+"&group=department&group=displayName&company="
+						var q = "department=&Vendor=&OS=&CPU=&RAM="+r.get('name')+"&group=department&group=ComputerName&group=displayName&company="
 						$('#myModalLabel').text(r.get('name'));
 						showModal(q);
 						//alert(r.get('name')+' '+r.get('value'));
@@ -296,7 +296,7 @@ $(function(){
 					 * m:额外参数
 					 */
 					click:function(r,e,m){
-						var q = "department=&Vendor=&OS=&CPU=&Model="+r.get('name')+"&group=department&group=displayName&company="
+						var q = "department=&Vendor=&OS=&CPU=&Model="+r.get('name')+"&group=department&group=ComputerName&group=displayName&company="
 						$('#myModalLabel').text(r.get('name'));
 						showModal(q);
 						//alert(r.get('name')+' '+r.get('value'));
@@ -380,7 +380,7 @@ $(function(){
 						return t + " pcs";
 					},
 					click:function(r,e,m){
-						var q = "department=&Vendor=&OS=&CPU="+r.get('name')+"&RAM=&group=department&group=displayName&company="
+						var q = "department=&Vendor=&OS=&CPU="+r.get('name')+"&RAM=&group=department&group=ComputerName&group=displayName&company="
 						$('#myModalLabel').text(r.get('name'));
 						showModal(q);
 						//alert(r.get('name')+' '+r.get('value'));
