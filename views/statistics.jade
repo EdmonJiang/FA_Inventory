@@ -12,12 +12,14 @@ block content
             select.form-control(name="company")
               option(value="") -- Filter by Company --
               each company in companies
-                option(value=company)= company
+                if company
+                  option(value=company)= company
           .col-sm-6.col-md-4
             select.form-control(name="department")
               option(value="") -- Filter by Department --
                 each department in departments
-                  option(value=department)= department
+                  if department
+                    option(value=department)= department
           .col-sm-6.col-md-4
             select.form-control(name="Vendor")
               option(value="") -- Filter by Vendor --
