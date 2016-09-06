@@ -52,6 +52,7 @@ $(function(){
 					title : {
 						text : 'Laptop Distribution of Companies',
 						color : '#3e576f',
+						offsety: -10
 					},
 					footnote : {
 						text : 'Data from ACBSIT Nanjing',
