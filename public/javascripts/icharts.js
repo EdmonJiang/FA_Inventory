@@ -114,6 +114,8 @@ $(function(){
 						footnote : 'Data from ACBSIT Nanjing',
 						width : 1400,
 						height : 400,
+						animation : true,//开启过渡动画
+						animation_duration:800,//800ms完成动画
 						coordinate:{
 							width:740,
 							height:380,
@@ -222,6 +224,8 @@ $(function(){
 						}
 					}
 				},
+				animation : true,//开启过渡动画
+				animation_duration:800,//800ms完成动画
 				shadow : true,
 				shadow_blur : 2,
 				shadow_color : '#aaaaaa',
