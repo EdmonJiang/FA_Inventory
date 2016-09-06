@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Pcinfo = require('../models/pcinfo.js');
+var Recycle = require('../models/recycle.js');
+var Pclog = require('../models/pclog.js');
 
 var objSort = {pc:"ComputerName",pcd:"-ComputerName",
                name:"displayName",named:"-displayName",
@@ -51,7 +53,7 @@ router.get('/', function(req, res, next) {
   
   
 });
-
+// receive pcinfo
 router.post('/', function(req, res, next){
   var userinfo = {};
   userinfo = req.body;
@@ -67,21 +69,23 @@ router.post('/', function(req, res, next){
         }
         doc.updated = new Date;
         doc.increment();
-        doc.save(function(err){
+        doc.save(function(err, doc){
           if (err){return next(new Error('save failed!'))};
+          saveLog('update', doc);
           console.log('save successful');
         });
 
       }else{
         var pcinfo = new Pcinfo(userinfo);
-        pcinfo.save(function(err){
+        pcinfo.save(function(err, doc){
           if (err){return next(new Error('save failed!'))};
+
+          saveLog('add', doc);
         })
       }
     })
   }
 
-  
 });
 
 router.get('/details/:cn', function(req, res, next){
@@ -109,7 +113,7 @@ router.get('/details/:cn', function(req, res, next){
     })
   }
 })
-
+// update pcinfo details
 router.post('/details/:cn', function(req, res, next){
   var objpc = {};
   if(req.params.cn){
@@ -137,8 +141,15 @@ router.get('/delete/:cn', function(req, res, next){
   if(req.params.cn){
 
     computer.ComputerName = req.params.cn;
-    Pcinfo.findOneAndRemove(computer).exec(function(err){
+    Pcinfo.findOneAndRemove(computer).exec(function(err,pcinfo){
       if (err){return next(new Error('could not find the pc!'))};
+
+      var recycle = new Recycle(pcinfo.toJSON());
+      recycle.save(function(err, doc){
+          if (err){return next(new Error('recycle failed!'))};
+
+          saveLog('delete', doc);
+      })
       computer.status = 'This computer has been deleted!'
       res.render('details', {computer: computer});
       //res.redirect('/');
@@ -146,5 +157,21 @@ router.get('/delete/:cn', function(req, res, next){
   }
 })
 
+function saveLog(method, doc){
+  var pclog = new Pclog();
+    pclog.ComputerName = doc.ComputerName;
+    pclog.LogonName = doc.LogonName;
+    pclog.displayName = doc.displayName;
+    if(method === 'delete'){
+      pclog.recycle = doc._id;
+    }else{
+      pcinfo.recycle = doc._id;     
+    }
+    pclog.method = method;
+    pclog.save(function(err){
+    if (err){return next(new Error('pclog save failed!'))};
+    console.log('saved: '+doc);
+  })
+}
 
 module.exports = router;
