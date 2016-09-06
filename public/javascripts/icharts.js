@@ -209,6 +209,21 @@ $(function(){
 						}
 					}
 				}]
+			},
+			sub_option:{
+				listeners:{
+					/**
+					 * r:iChart.Rectangle2D对象
+					 * e:eventObject对象
+					 * m:额外参数
+					 */
+					click:function(r,e,m){
+						var q = "department=&Vendor=&OS=&CPU=&RAM="+r.get('name')+"&group=department&group=displayName&company="
+						$('#myModalLabel').text(r.get('name'));
+						showModal(q);
+						//alert(r.get('name')+' '+r.get('value'));
+					}
+				}
 			}
 		});
 		//调用绘图方法开始绘图
@@ -273,7 +288,20 @@ $(function(){
 					border : {
 						width : 2,
 						color : '#ffffff'
+					},
+					listeners:{
+					/**
+					 * r:iChart.Rectangle2D对象
+					 * e:eventObject对象
+					 * m:额外参数
+					 */
+					click:function(r,e,m){
+						var q = "department=&Vendor=&OS=&CPU=&Model="+r.get('name')+"&group=department&group=displayName&company="
+						$('#myModalLabel').text(r.get('name'));
+						showModal(q);
+						//alert(r.get('name')+' '+r.get('value'));
 					}
+				}
 				},
 				coordinate : {
 					background_color : null,
@@ -350,8 +378,14 @@ $(function(){
 				listeners : {
 					parseText : function(r, t) {
 						return t + " pcs";
+					},
+					click:function(r,e,m){
+						var q = "department=&Vendor=&OS=&CPU="+r.get('name')+"&RAM=&group=department&group=displayName&company="
+						$('#myModalLabel').text(r.get('name'));
+						showModal(q);
+						//alert(r.get('name')+' '+r.get('value'));
 					}
-				}
+				},
 			},
 			legend : {
 				enable : false
