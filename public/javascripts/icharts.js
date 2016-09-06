@@ -25,7 +25,7 @@ $(function(){
 
 	$('#select-chart').change(function(){
 		var objQ = objQuery[$(this).val()];
-		ajaxData(objQ.q, objQ.type);
+		ajaxData(objQ.q+$('#company-chart').val(), objQ.type);
 	})
 	$('#company-chart').change(function(){
 		var objQ = objQuery[$('#select-chart').val()];
@@ -48,7 +48,7 @@ $(function(){
 			fnDraw(data);
     	})
 	}
-    
+//company   
 	function drawDonut2D(data){
 		var chart = new iChart.Donut2D({
 					render : 'canvasDiv',
@@ -109,7 +109,7 @@ $(function(){
 				
 				chart.draw();
 	}
-
+//os
 	function drawBar2D(data){
 
 				new iChart.Bar2D({
@@ -141,11 +141,24 @@ $(function(){
 									return t+"%";
 								}
 							}
+						},
+						sub_option:{
+							listeners:{
+								/**
+								 * r:iChart.Rectangle2D对象
+								 * e:eventObject对象
+								 * m:额外参数
+								 */
+								click:function(r,e,m){
+									alert(r.get('name')+' '+r.get('value'));
+								}
+							}
 						}
+
 				}).draw();
 
 	}
-
+//ram
 	function drawColumn2D(data){
 		
 		data.sort(function(a,b){return parseInt(a.name) - parseInt(b.name)});
@@ -185,7 +198,7 @@ $(function(){
 		chart.draw();
 
 	}
-
+//model
 	function drawMultiColum2D(data){
 		data.sort(function(a,b){return b.value - a.value});
 		var chart = new iChart.Column2D({
@@ -291,7 +304,7 @@ $(function(){
 			
 			chart.draw();
 	}
-
+//cpu
 	function drawBar2DTop(data){
 		data.sort(function(a,b){return b.value - a.value});
 		data = data.slice(0,10);
