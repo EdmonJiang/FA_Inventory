@@ -16,7 +16,8 @@ block content
         select#company-chart.form-control
           option(value="") -- Please Select Company Name --
           each company in companies
-            option(value=company)= company
+            if company
+              option(value=company)= company
 
   #canvasDiv
 
