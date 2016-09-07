@@ -94,7 +94,7 @@ router.get('/details/:cn', function(req, res, next){
 
       if (err || !details){
         //return next(new Error('could not find the pc for delete!'));
-        res.render('error', {message: 'the computer does not exist.',error:{status:404}})
+        res.render('404', {error:{status:404,message: 'The computer does not exist.'}})
       }else{
         var objpc = {};
         for(var prop in details._doc){

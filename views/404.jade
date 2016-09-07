@@ -5,11 +5,11 @@ block content
   .container
     h1
       = error.status
-      |&nbsp;
+      |:&nbsp;
       = error.message
     .center
       .error-status
-        |404
+        = error.status
       h4 Please choose what you want below:
       br
       .back-home
