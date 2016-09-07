@@ -4,6 +4,10 @@ body {
   overflow-y: scroll;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+.center{
+  margin: 0 auto;
+  text-align: center;
+}
 .btn-size {
     width: 78px !important;
 }
@@ -43,4 +47,18 @@ body {
 }
 .div-select{
   margin-bottom: 50px;
+}
+.error-status{
+  
+    /* height: 200px; */
+    background-color: #eee;
+    font-size: 30vh;
+    display: inline-block;
+    padding: 5vmin;
+    border-radius: 50%;
+    margin: 50px 0;
+    color: #419bc7;
+}
+.back-home a{
+  margin-right: 20px;
 }

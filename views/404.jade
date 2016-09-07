@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  include nav.jade
+  .container
+    h1
+      = error.status
+      |&nbsp;
+      = error.message
+    .center
+      .error-status
+        |404
+      h4 Please choose what you want below:
+      br
+      .back-home
+        a.btn.btn-default(href="/") Back Home
+        a.btn.btn-default(href="/reports/") Export Reports
+        a.btn.btn-default(href="/statistics/") Statistics & Query
+        a.btn.btn-default(href="/charts/") Watch Charts
+      
