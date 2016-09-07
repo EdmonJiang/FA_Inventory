@@ -157,17 +157,17 @@ router.get('/delete/:cn', function(req, res, next){
   }
 })
 
-function saveLog(method, doc){
+function saveLog(operate, doc){
   var pclog = new Pclog();
     pclog.ComputerName = doc.ComputerName;
     pclog.LogonName = doc.LogonName;
     pclog.displayName = doc.displayName;
-    if(method === 'delete'){
+    if(operate === 'delete'){
       pclog.recycle = doc._id;
     }else{
       pcinfo.recycle = doc._id;     
     }
-    pclog.method = method;
+    pclog.operate = operate;
     pclog.save(function(err){
     if (err){return next(new Error('pclog save failed!'))};
     console.log('saved: '+doc);

@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  include nav.jade
+  .container
+    h1 Logs
+    .panel.panel-default
+      .panel-heading Today's Logs:&nbsp;
+        span= logs.length
+        .pull-right.label.label-success
+          span.glyphicon.glyphicon-repeat
+      .panel-body(style={"height":"40vmin","overflow-y" :"auto"})
+        .list-group.log-list
+          - var count = 1
+          each log in logs
+            li.list-group-item
+              label(style={"width":"30px"})
+                = count++
+                |.
+              if log.operate === "delete"
+                span.glyphicon.glyphicon-remove.text-danger
+              else
+                span.glyphicon(class={"glyphicon-ok text-success":log.operate==="add"},class={"glyphicon-refresh text-warning":log.operate==="update"}) 
+              span
+                a(href='/deleted/'+log.ComputerName)= log.ComputerName
+              span= log.LogonName
+              span= log.displayName
+              span= moment(log.created).format("MM-DD HH:mm:ss")
+    .clearfix
+    #chart.panel-body(style={"height":"40vmin"})
+
+
+  script(src='/javascripts/echarts-bar.min.js')
+  script(src='/javascripts/log-charts.js')
+

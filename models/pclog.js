@@ -7,7 +7,7 @@ var PclogSchema = Schema({
     displayName: {type: String, default: ''},
     pcinfo: {type: Schema.Types.ObjectId, ref: 'Pcinfo'},
     recycle: {type: Schema.Types.ObjectId, ref: 'Recycle'},
-    method: {type: String, required: true},
+    operate: {type: String, required: true},
     created: {
         type: Date,
         default: new Date

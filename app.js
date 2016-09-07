@@ -3,10 +3,12 @@ var compression = require('compression');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var moment = require('moment');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js');
+var Pclog = require('./models/pclog.js');
 mongoose.Promise = global.Promise;
 mongoose.connect(configDB.uri);
 
@@ -14,6 +16,7 @@ var routes = require('./routes/index');
 var reports = require('./routes/reports');
 var statistics = require('./routes/statistics');
 var charts = require('./routes/charts');
+var logs = require('./routes/logs');
 var users = require('./routes/users');
 
 var app = express();
@@ -35,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res,next){
   app.locals.currentUrl = req.path;
+  app.locals.moment = moment;
   res.locals.rootFolder = rootFolder;
   next();
 });
@@ -43,6 +47,7 @@ app.use('/', routes);
 app.use('/reports', reports);
 app.use('/statistics', statistics);
 app.use('/charts', charts);
+app.use('/logs', logs);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
