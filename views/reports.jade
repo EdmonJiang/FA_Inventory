@@ -84,7 +84,9 @@ block content
         if(!isChecked){
           event.preventDefault();
           event.returnValue=false;
-          $('#form-alert').show();
+          $('#form-alert').fadeIn('fast',function(){
+            $(this).delay(1000).fadeOut('slow');
+          });
           return;
         }  
         var btn = $('#create-report');
