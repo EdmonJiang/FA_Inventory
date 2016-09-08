@@ -35,6 +35,8 @@ block content
               .clearfix
               .col-xs-6.col-md-4
                 button#create-report.btn.btn-primary(type="submit") Generate Report
+               .col-xs-6.col-md-4
+                #form-alert.alert.alert-danger(role="alert",style={"font-size":"16px","line-height": "3px","display":"none"}) At least select one option!
       .panel.panel-default
         #headingTwo.panel-heading(role='tab')
           h4.panel-title
@@ -52,13 +54,18 @@ block content
           .panel-body
             table.table.table-striped.table-hover
               tr
+                th NO.
                 th Report Name
                 th Created Date
+                th File Size
                 th Action
+              - var count = 1
               each report in reports
                 tr
+                  td= count++
                   td= report.filename
-                  td= report.created
+                  td= moment(report.created).format("YYYY-MM-DD HH:mm:ss")
+                  td= report.size
                   td
                     a.btn.btn-success(href='/reports/download/'+report.filename) Download
                     |&nbsp;&nbsp;
@@ -70,7 +77,16 @@ block content
         $('#check-container input[type="checkbox"]').prop('checked', this.checked);
       });
       $('#div-report').submit(function(event){
-        
+        var isChecked = false;
+        $('#check-container input[type="checkbox"]')
+          .each(function(index,item){if(item.checked){isChecked = true}})
+
+        if(!isChecked){
+          event.preventDefault();
+          event.returnValue=false;
+          $('#form-alert').show();
+          return;
+        }  
         var btn = $('#create-report');
         var flag = true;
         btn.prop('disabled',false); 

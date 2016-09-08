@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var moment = require('moment');
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js');
 mongoose.Promise = global.Promise = require('bluebird');
@@ -18,7 +19,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-var rootFolder = __dirname;
+//var rootFolder = __dirname;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,7 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res,next){
   app.locals.currentUrl = req.path;
-  res.locals.rootFolder = rootFolder;
+  app.locals.moment = moment;
+  //res.locals.rootFolder = rootFolder;
   next();
 });
 
@@ -69,7 +71,12 @@ app.use(function(req, res, next) {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
+  if(err.status){
+    res.status(err.status);
+  }else{
+    err.status = 500;
+    res.status(500);
+  }
   res.render('404', {error: err});
 });
 

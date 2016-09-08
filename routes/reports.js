@@ -10,12 +10,26 @@ var moment = require('moment');
 router.get('/', function(req, res, next){
   var reports = glob.sync('./public/reports/*',{nodir:true}).map(
     function(item){
+      var filesize = fs.statSync(item).size;
+
+      if(filesize/1024 <1024)
+      {
+        filesize = (filesize/1024).toFixed(2) + "KB";
+      }else
+      {
+        filesize = (filesize/1024/1024).toFixed(2) + "MB";
+      }
+
       return {filename:item.split('/').slice(-1),
-              created:fs.statSync(item).ctime};
+              created:fs.statSync(item).ctime,
+              size: filesize};
       }
     );
 
   Pcinfo.find().distinct('company',function(err, docs){
+      // if(err){
+      //   return next(new Error('Can not find company categaries!'));
+      // }
       res.render('reports', {
       reports: reports,
       companies: docs,
@@ -37,7 +51,9 @@ router.get('/download/:filename', function(req, res, next){
     });
     fs.createReadStream(filename).pipe(res);
   }else{
-    res.end("Sorry, file does not exist!");
+    //return next(new Error('Sorry, the file does not exist!'));
+    //res.end("Sorry, file does not exist!");
+    res.redirect('/reports/');
   }
   
 })
@@ -47,11 +63,31 @@ router.post('/generate', function(req, res, next){
   
   var objFields = {};
   var objFilter = {};
-
+  
   if(req.body.hasOwnProperty('filter') && req.body.filter !== 'all'){
     objFilter.company = req.body.filter;
   }
   delete req.body.filter;
+
+  if(Object.keys(req.body).length ===0){
+
+    //  console.log(req.body)
+    //res.end('empty');
+    res.redirect('/reports/');
+    return;
+  }
+  
+
+  var isValid = Object.keys(req.body).every(function(item){
+      return (Object.keys(Pcinfo.schema.paths).indexOf(item) > -1) && (typeof req.body[item] === "string");
+    })
+
+  if(!isValid){
+    // console.log('args for generate report are error!');
+    //res.end('failed');
+    res.redirect('/reports/');
+    return;
+  }
 
   Object.keys(req.body).map(function(item){
     objFields[item] = 1;
@@ -64,8 +100,12 @@ router.post('/generate', function(req, res, next){
   // console.log(objFields);
 
   Pcinfo.find(objFilter).select(objFields).exec(function(err, docs){
-      if(err) return next(new Error('can not export pcinfo!'));
-
+      if(err){
+          // res.end('failed');
+          res.redirect('/reports/');
+          return;
+      };
+      if(docs){
         var csvStream = csv.format({headers: true});
         var timestamp = moment(new Date()).format('YYYY-MM-DD-HHmmssSS')+".csv";
         var filepath = './public/temp/'+timestamp;
@@ -77,6 +117,11 @@ router.post('/generate', function(req, res, next){
           res.redirect('/reports/');
         });
         csv.write(JSON.parse(JSON.stringify(docs)), {headers: true}).pipe(ws);
+      }else{
+        res.redirect('/reports/');
+        // res.end('failed');
+        return;
+      }
     }
   )
 })
@@ -93,7 +138,8 @@ router.get('/delete/:filename', function(req, res, next){
     fs.unlinkSync(filename);
     res.redirect('/reports/');
   }else{
-    res.end("Sorry, file does not exist!");
+    res.redirect('/reports/');
+    //res.end("Sorry, file does not exist!");
   }
 })
 
