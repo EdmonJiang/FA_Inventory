@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var configDB = require('./config/database.js');
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise = require('bluebird');
 mongoose.connect(configDB.uri);
 
 var routes = require('./routes/index');

@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var pcSchema = mongoose.Schema({
-    ComputerName: {type: String, default: ''},
-    LogonName: {type: String, default: ''},
+    ComputerName: {type: String, required: true},
+    LogonName: {type: String, required: true},
     Domain: {type: String, default: ''},
     Vendor: {type: String, default: ''},
     Model: {type: String, default: ''},
