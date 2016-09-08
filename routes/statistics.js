@@ -10,26 +10,32 @@ var moment = require('moment');
 router.get('/', function(req, res, next){
 
   Pcinfo.find().distinct('company',function(err, companies){
+    if(err) return next(err);
     Pcinfo.find().distinct('department',function(err, departments){
+     if(err) return next(err);
       Pcinfo.find().distinct('Vendor',function(err, vendors){
+        if(err) return next(err);
         Pcinfo.find().distinct('OS',function(err, oss){
+          if(err) return next(err);
           Pcinfo.find().distinct('CPU',function(err, cpus){
+            if(err) return next(err);
             Pcinfo.find().distinct('RAM',function(err, rams){
-      res.render('statistics', {
-        companies: companies,
-        departments: departments,
-        vendors: vendors,
-        oss: oss,
-        cpus: cpus,
-        rams: rams,
-        groups: Object.keys(Pcinfo.schema.paths)
-    });
-  })
-   })
-    })
-     })
+              if(err) return next(err);
+                res.render('statistics', {
+                  companies: companies,
+                  departments: departments,
+                  vendors: vendors,
+                  oss: oss,
+                  cpus: cpus,
+                  rams: rams,
+                  groups: Object.keys(Pcinfo.schema.paths)
+                });
+            })
+          })
+        })
       })
-       })
+    })
+  })
 
 })
 
@@ -49,6 +55,8 @@ router.post('/', function(req, res, next){
       }
     })
   }else{
+      //res.redirect('/statistics/');
+      res.end('group args must be array');
       return;
   }
 
@@ -58,7 +66,18 @@ router.post('/', function(req, res, next){
     // delete req.body.limit;
 
   delete req.body.group;
-  
+
+  var isValid = Object.keys(req.body).every(function(item){
+    return (Object.keys(Pcinfo.schema.paths).indexOf(item) > -1) && (typeof req.body[item] === "string");
+  })
+// console.log('isValid: '+isValid);
+  if(!isValid){
+    // console.log('args for generate report are error!');
+    //res.redirect('/reports/');
+    res.end('group query args invalid');
+    return;
+  }
+
   Object.keys(req.body).forEach(function(value){
     if(req.body[value]===''){
       return false;
@@ -69,8 +88,11 @@ router.post('/', function(req, res, next){
 
   Pcinfo.aggregate([{$match: objfilter},{$group:objgroup}])
     .exec(function(err, docs){
-      if(err) return next(err)
-      //console.log(docs)
+      if(err) {
+        res.end('query error!')
+        return;
+      }
+      // console.log(docs)
       res.send(JSON.stringify(docs));
     })
 })

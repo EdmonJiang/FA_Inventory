@@ -3,7 +3,12 @@ $(function(){
 
         $.post(window.location.pathname, $('#filter-form').serialize(), function(res){
             $('#results-table').html('');
-            var data = JSON.parse(res);
+            if(res){
+                var data = JSON.parse(res);
+            }else{
+                $('#results-count').text(0);
+                return;
+            }
             //console.log(data)
             if(Object.keys(data[0]._id).length === 0){
                 $('#results-count').text(0);
