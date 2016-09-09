@@ -44,14 +44,14 @@ body {
 .div-select{
   margin-bottom: 50px;
 }
-.log-list li{
+#log-list li{
   margin-bottom: 5px;
 }
-.log-list li>span{
+#log-list li>span{
   margin-right: 1em;
   padding-right: 1em;
 }
-.log-list span+span{
+#log-list span+span{
   margin-right: 3em;
   padding-right: 3em;
 }

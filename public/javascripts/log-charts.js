@@ -1,4 +1,35 @@
 $(function(){
+
+    $('#refresh-log').click(function(){
+        $('#log-list').html('');
+        $.post('/logs/', function(data){
+            //console.log(data);
+            if(data){
+                createLogList(data);
+            }else{
+                return;
+            }
+        })
+    })
+
+    function createLogList(logs){
+
+        var list = $('#log-list');
+
+        for(var i=0,len=logs.length;i<len;i++){
+            if(logs[i].operate === "add")
+            {
+                list.append("<li>"+logs[i].ComputerName</li>")
+            }else if(logs[i].operate === "update")
+            {
+
+            }else if(logs[i].operate === "delete")
+            {
+
+            }
+            
+        }
+    }
     // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init($('#chart')[0]);
 
@@ -12,7 +43,7 @@ $(function(){
                 data:['add','update','delete']
             },
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                data: ["Mon","Tue","Wen","Thu","Fri","Sat"]
             },
             yAxis: {},
             series: [{

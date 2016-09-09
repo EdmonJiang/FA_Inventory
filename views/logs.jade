@@ -7,10 +7,10 @@ block content
     .panel.panel-default
       .panel-heading Today's Logs:&nbsp;
         span= logs.length
-        .pull-right.label.label-success
+        .pull-right.label.label-success#refresh-log(style={"cursor": "pointer"})
           span.glyphicon.glyphicon-repeat
       .panel-body(style={"height":"40vmin","overflow-y" :"auto"})
-        .list-group.log-list
+        .list-group#log-list
           - var count = 1
           each log in logs
             li.list-group-item

@@ -16,4 +16,16 @@ router.get('/', function(req, res, next){
     
 })
 
+router.post('/', function(req, res, next){
+
+  Pclog.find({})
+    .where('created').gt(moment(Date.now()).format('YYYY-MM-DD'))
+    .exec(function(err, docs){
+      if(err){res.send('error');
+              return;}
+      res.send(docs);
+    });
+    
+})
+
 module.exports = router;

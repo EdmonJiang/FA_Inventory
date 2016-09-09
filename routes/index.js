@@ -165,7 +165,7 @@ function saveLog(operate, doc){
     if(operate === 'delete'){
       pclog.recycle = doc._id;
     }else{
-      pcinfo.recycle = doc._id;     
+      pclog.pcinfo = doc._id;     
     }
     pclog.operate = operate;
     pclog.save(function(err){
