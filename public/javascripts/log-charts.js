@@ -20,16 +20,19 @@ $(function(){
     function addIcon(tbl_body){
         var trs = tbl_body.getElementsByTagName("tr");
         for(var i=0,len=trs.length;i<len;i++){
-            var td = trs[i].getElementsByTagName("td")[4]
-            switch(td.textContent){
+            var tdAction = trs[i].getElementsByTagName("td")[4],
+                tdPC = trs[i].getElementsByTagName("td")[1];
+            switch(tdAction.textContent){
                 case "add":
-                    td.innerHTML = '<span class="glyphicon glyphicon-ok text-success"></span>';
+                    tdPC.innerHTML = '<a href="/details/'+tdPC.innerText+'" target="_blank">'+tdPC.innerText+'</a>';
+                    tdAction.innerHTML = '<span class="glyphicon glyphicon-ok text-success"></span>';
                     break;
                 case "update":
-                    td.innerHTML = '<span class="glyphicon glyphicon-refresh text-warning"></span>';
+                    tdPC.innerHTML = '<a href="/details/'+tdPC.innerText+'" target="_blank">'+tdPC.innerText+'</a>';
+                    tdAction.innerHTML = '<span class="glyphicon glyphicon-refresh text-warning"></span>';
                     break;
                 case "delete":
-                    td.innerHTML = '<span class="glyphicon glyphicon-remove text-danger"></span>';
+                    tdAction.innerHTML = '<span class="glyphicon glyphicon-remove text-danger"></span>';
                     break;
             }
         }
