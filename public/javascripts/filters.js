@@ -1,9 +1,9 @@
 $(function(){
     $('#btn-filter').on('click',function(){
 
-        $.post(window.location.pathname, $('#filter-form').serialize(), function(res){
+        $.post(window.location.pathname, $('#filter-form').serialize(), function(data){
             $('#results-table').html('');
-            var data = JSON.parse(res);
+            //var data = JSON.parse(res);
             //console.log(data)
             if(Object.keys(data[0]._id).length === 0){
                 $('#results-count').text(0);

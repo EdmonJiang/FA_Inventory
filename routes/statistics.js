@@ -71,7 +71,7 @@ router.post('/', function(req, res, next){
     .exec(function(err, docs){
       if(err) return next(err)
       //console.log(docs)
-      res.send(JSON.stringify(docs));
+      res.json(docs);
     })
 })
 

@@ -6,30 +6,19 @@ block content
     h1 Logs
     .panel.panel-default
       .panel-heading Today's Logs:&nbsp;
-        span= logs.length
+        span#log-count 0
         .pull-right.label.label-success#refresh-log(style={"cursor": "pointer"})
           span.glyphicon.glyphicon-repeat
-      .panel-body(style={"height":"40vmin","overflow-y" :"auto"})
-        .list-group#log-list
-          - var count = 1
-          each log in logs
-            li.list-group-item
-              label(style={"width":"30px"})
-                = count++
-                |.
-              if log.operate === "delete"
-                span.glyphicon.glyphicon-remove.text-danger
-              else
-                span.glyphicon(class={"glyphicon-ok text-success":log.operate==="add"},class={"glyphicon-refresh text-warning":log.operate==="update"}) 
-              span
-                a(href='/deleted/'+log.ComputerName)= log.ComputerName
-              span= log.LogonName
-              span= log.displayName
-              span= moment(log.created).format("MM-DD HH:mm:ss")
+      .panel-body#log-panel(style={"height":"40vmin","overflow-y" :"auto"})
+        table.table.table-hover#log-list
+          
     .clearfix
-    #chart.panel-body(style={"height":"40vmin"})
+    #chart.panel-body(style={"height":"400px","width":"1100px"})
 
 
   script(src='/javascripts/echarts-bar.min.js')
+  script(src='/javascripts/createTable.js')
   script(src='/javascripts/log-charts.js')
+  script.
+    var groupLog = !{docs}
 
