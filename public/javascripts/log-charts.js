@@ -8,6 +8,7 @@ $(function(){
                 createTable($('#log-list')[0], data, addIcon);
                 $('#log-count').text(data.length);
                 //drawChart(data);
+                $("#log-panel").animate({ scrollTop: $('#log-panel').prop("scrollHeight")},800);
                 //$("#log-list").append('<a name="1" href="#1"></a>').find("a")[0].click();
             }else{
                 return;
