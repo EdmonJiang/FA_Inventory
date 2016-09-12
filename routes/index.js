@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Pcinfo = require('../models/pcinfo.js');
+var Recycle = require('../models/recycle.js');
+var Pclog = require('../models/pclog.js');
 
 var objSort = {pc:"ComputerName",pcd:"-ComputerName",
                name:"displayName",named:"-displayName",
@@ -68,14 +70,16 @@ router.post('/', function(req, res, next){
         doc.increment();
         doc.save(function(err){
           if (err){console.log('update failed')};
+          saveLog('update', doc);
           // console.log('update successful');
         });
 
       }else{
         // console.log('pc not found');
         var pcinfo = new Pcinfo(userinfo);
-        pcinfo.save(function(err){
+        pcinfo.save(function(err, doc){
           if (err){console.log('add failed')};
+          saveLog('add', doc);
           // console.log('add successful');
         })
       }
@@ -157,13 +161,19 @@ router.get('/delete/:cn', function(req, res, next){
     var computer = {};
     computer.ComputerName = req.params.cn;
 
-    Pcinfo.findOneAndRemove(computer).exec(function(err, doc){
-      if (err || !doc){
+    Pcinfo.findOneAndRemove(computer).exec(function(err, pcinfo){
+      if (err || !pcinfo){
         computer.status = 'This computer does not exsit!';
         res.render('details', {computer: computer});
         return;
       };
       //console.log(doc)
+      var recycle = new Recycle(pcinfo.toJSON());
+      recycle.save(function(err, doc){
+          if (err){return next(new Error('recycle failed!'))};
+
+          saveLog('delete', doc);
+      })
       computer.status = 'This computer has been deleted!';
       res.render('details', {computer: computer});
       //res.redirect('/');
@@ -171,5 +181,21 @@ router.get('/delete/:cn', function(req, res, next){
   }
 })
 
+function saveLog(action, doc){
+  var pclog = new Pclog();
+    pclog.ComputerName = doc.ComputerName;
+    pclog.LogonName = doc.LogonName;
+    pclog.displayName = doc.displayName;
+    if(action === 'delete'){
+      pclog.recycle = doc._id;
+    }else{
+      pclog.pcinfo = doc._id;     
+    }
+    pclog.action = action;
+    pclog.save(function(err){
+    if (err){return next(new Error('pclog save failed!'))};
+    //console.log('saved: '+doc);
+  })
+}
 
 module.exports = router;

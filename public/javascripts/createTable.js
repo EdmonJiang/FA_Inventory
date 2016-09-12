@@ -1,4 +1,4 @@
-function createTable(divTable, data){
+function createTable(divTable, data, callback){
 
         if(data.length>0){
             //data.sort(function(a,b){return a.total - b.total});
@@ -33,7 +33,9 @@ function createTable(divTable, data){
                     cell.appendChild(document.createTextNode(v.total));
                 }
             })
-
+            if(callback){
+                callback(tbl_body);
+            }
             divTable.appendChild(tbl_head);
             divTable.appendChild(tbl_body);
         }
