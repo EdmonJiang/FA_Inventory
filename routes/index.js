@@ -192,6 +192,7 @@ function saveLog(action, doc){
       pclog.pcinfo = doc._id;     
     }
     pclog.action = action;
+    pclog.created = new Date;
     pclog.save(function(err){
     if (err){return next(new Error('pclog save failed!'))};
     //console.log('saved: '+doc);
