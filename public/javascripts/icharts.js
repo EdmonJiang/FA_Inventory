@@ -35,9 +35,9 @@ $(function(){
 	function ajaxData(req, fnDraw){
 		
 		$.post('/statistics/', req, function(res){
-			var response = JSON.parse(res);
+			//var response = JSON.parse(res);
 			var data = [];
-			response.forEach(function(item){
+			res.forEach(function(item){
 				var oitem = {
 					name: item._id[Object.keys(item._id)[0]],
 					value: item.total,

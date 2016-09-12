@@ -41,7 +41,7 @@ router.get('/', function(req, res, next){
 
 
 router.post('/', function(req, res, next){
-  //console.log(req.body);
+  console.log(req.body);
   var objgroupid = {};
   var objgroup = {};
   var objfilter = {};
@@ -93,7 +93,7 @@ router.post('/', function(req, res, next){
         return;
       }
       // console.log(docs)
-      res.send(JSON.stringify(docs));
+      res.json(docs);
     })
 })
 

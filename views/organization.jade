@@ -1,0 +1,27 @@
+extends layout
+
+append css
+  link(rel='stylesheet', href='/stylesheets/tree.css')
+block content
+  include nav.jade
+  .container
+    h1 Organization
+    .col-md-6
+      #orgtree.panel.panel-default
+        ul.dhtmlgoodies_tree
+          li.li_1
+            img(src='/img/node_minus.gif')
+            img(src='/img/folder_open.gif')
+            a#top_node(href='javascript:void(0);') apac.group.atlascopco.com
+            each company in companies
+              if company
+                ul.ul_1(style='display: block;')
+                  li.li_2
+                    img(src='/img/node_plus.gif')
+                    img(src='/img/folder_close.gif')
+                    a(href='javascript:void(0);')= company
+
+    .col-md-6
+      table.table.table-hover.table-striped.table-bordered#pcinfo-list
+
+  script(src='/javascripts/tree.js')

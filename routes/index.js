@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var Pcinfo = require('../models/pcinfo.js');
-var Recycle = require('../models/recycle.js');
-var Pclog = require('../models/pclog.js');
+var express = require('express'),
+    router = express.Router(),
+    Pcinfo = require('../models/pcinfo.js'),
+    Recycle = require('../models/recycle.js'),
+    Pclog = require('../models/pclog.js');
 
-var objSort = {pc:"ComputerName",pcd:"-ComputerName",
+const objSort = {pc:"ComputerName",pcd:"-ComputerName",
                name:"displayName",named:"-displayName",
                ram:"RAM",ramd:"-RAM"};
 

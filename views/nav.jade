@@ -15,6 +15,10 @@ ul.nav.nav-tabs
         a(href='/charts/')
             span.glyphicon.glyphicon-stats
             |&nbsp;Charts
+    li(role='presentation',class={active: currentUrl === '/organization/'})
+        a(href='/organization/')
+            span.glyphicon.glyphicon-user
+            |&nbsp;Organization
     li(role='presentation',class={active: currentUrl === '/logs/'})
         a(href='/logs/')
             span.glyphicon.glyphicon-floppy-disk

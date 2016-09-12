@@ -1,23 +1,24 @@
-var express = require('express');
-var compression = require('compression');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var moment = require('moment');
-var mongoose = require('mongoose');
-var Pclog = require('./models/pclog.js');
-var configDB = require('./config/database.js');
+var express = require('express'),
+    compression = require('compression'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    moment = require('moment'),
+    mongoose = require('mongoose'),
+    Pclog = require('./models/pclog.js'),
+    configDB = require('./config/database.js');
 mongoose.Promise = global.Promise = require('bluebird');
 mongoose.connect(configDB.uri);
 
-var routes = require('./routes/index');
-var reports = require('./routes/reports');
-var statistics = require('./routes/statistics');
-var charts = require('./routes/charts');
-var logs = require('./routes/logs');
-var users = require('./routes/users');
+var routes = require('./routes/index'),
+    reports = require('./routes/reports'),
+    statistics = require('./routes/statistics'),
+    charts = require('./routes/charts'),
+    logs = require('./routes/logs'),
+    organization = require('./routes/organization'),
+    users = require('./routes/users');
 
 var app = express();
 
@@ -48,6 +49,7 @@ app.use('/reports', reports);
 app.use('/statistics', statistics);
 app.use('/charts', charts);
 app.use('/logs', logs);
+app.use('/organization', organization);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
