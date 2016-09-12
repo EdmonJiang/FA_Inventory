@@ -86,7 +86,7 @@ $(function(){
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: 'The lastest weeks\' logs'
+                text: 'The lastest week\'s logs'
             },
             tooltip: {},
             legend: {
