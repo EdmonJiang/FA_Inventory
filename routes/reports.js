@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var Pcinfo = require('../models/pcinfo.js');
-var glob = require('glob');
-var csv = require("fast-csv");
-var fs = require('fs');
-var moment = require('moment');
+var express = require('express'),
+    router = express.Router(),
+    Pcinfo = require('../models/pcinfo.js'),
+    glob = require('glob'),
+    csv = require("fast-csv"),
+    fs = require('fs'),
+    moment = require('moment');
 /* GET reports page. */
 
 router.get('/', function(req, res, next){

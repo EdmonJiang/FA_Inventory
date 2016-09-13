@@ -7,7 +7,7 @@ block content
   .container
     h1 Organization
     .col-md-6
-      #orgtree.panel.panel-default
+      #orgtree.panel
         ul.dhtmlgoodies_tree
           li.li_1
             img(src='/img/node_minus.gif')
@@ -21,7 +21,7 @@ block content
                     img(src='/img/folder_close.gif')
                     a(href='javascript:void(0);')= company
 
-    .col-md-6
+    .col-md-6.pcinfo-div
       table.table.table-hover.table-striped.table-bordered#pcinfo-list
 
   script(src='/javascripts/tree.js')

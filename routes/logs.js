@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var moment = require('moment');
-var Pclog = require('../models/pclog.js');
+var express = require('express'),
+    router = express.Router(),
+    moment = require('moment'),
+    Pclog = require('../models/pclog.js');
 /* GET statistics page. */
 
 router.get('/', function(req, res, next){

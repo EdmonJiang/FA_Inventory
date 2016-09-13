@@ -1,10 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var Pcinfo = require('../models/pcinfo.js');
-var glob = require('glob');
-var csv = require("fast-csv");
-var fs = require('fs');
-var moment = require('moment');
+var express = require('express'),
+    router = express.Router(),
+    Pcinfo = require('../models/pcinfo.js');
 /* GET statistics page. */
 
 router.get('/', function(req, res, next){
@@ -41,7 +37,7 @@ router.get('/', function(req, res, next){
 
 
 router.post('/', function(req, res, next){
-  console.log(req.body);
+  //console.log(req.body);
   var objgroupid = {};
   var objgroup = {};
   var objfilter = {};
