@@ -50,9 +50,9 @@ $(function(){
     	})
 	}
 	function showModal(req){
-		$.post('/statistics/', req, function(res){
+		$.post('/statistics/', req, function(data){
 			$('#chart-table').html('');
-            var data = JSON.parse(res);
+            //var data = JSON.parse(res);
             //console.log(data)
             if(Object.keys(data[0]._id).length === 0){
                 return;
