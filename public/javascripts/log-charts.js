@@ -52,11 +52,15 @@ $(function(){
     drawChart(groupLog);
     function drawChart(data){
         if(data){
-            var arrAdd = (new Array(7)).fill(0),
-                arrDelete = (new Array(7)).fill(0),
-                arrUpdate = (new Array(7)).fill(0),
+            var arrAdd = new Array(7),
+                arrDelete = new Array(7),
+                arrUpdate = new Array(7),
                 xArray = dateArray();
-
+            for(var i=0;i<7;i++){
+                arrAdd[i] = 0;
+                arrDelete[i] = 0;
+                arrUpdate[i] = 0;
+            }
             data.forEach(function(item) {
                 switch(item._id.action){
                     case "add":
