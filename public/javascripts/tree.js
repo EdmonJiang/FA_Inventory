@@ -7,7 +7,7 @@
 		this.minusImage = '/img/node_minus.gif';
         this.q = {
             department: "department=&Vendor=&OS=&CPU=&RAM=&group=department&group=&group=&company=",
-            displayName: "company=&Vendor=&OS=&CPU=&RAM=&group=displayName&group=&group=&department=",
+            displayName: "Vendor=&OS=&CPU=&RAM=&group=displayName&group=&group=&department=",
             pcinfo: "company=&Vendor=&OS=&CPU=&RAM=&group=displayName&group=ComputerName&group=Model&group=SN&displayName="
         }
 	}
@@ -108,7 +108,7 @@
         //三级菜单添加加载人员信息
         $(this).find(".li_3").on("click", function(){
           //console.log(treeObj.q.displayName+$(this).text())
-          treeObj.getList( treeObj.q.displayName+$(this).text(),
+          treeObj.getList( treeObj.q.displayName+$(this).text()+"&company="+secondNode.text(),
                         this,
                         "displayName",
                         treeObj.createSubUl
