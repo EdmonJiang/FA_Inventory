@@ -19,9 +19,9 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-  var today = new Date(Date.now());
+  var today = new Date();
   today.setHours(0,0,0,0);
-console.log(today);
+//console.log(today);
   Pclog.find({created:{$gte: today}})
     .exec(function(err, docs){
       if(err){res.send('error');
