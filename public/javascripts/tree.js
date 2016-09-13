@@ -80,12 +80,14 @@
 
 	$(function(){
       treeObj = new JSDragDropTree();
-
-      $("#top_node").on("click", function(){
-          $(this).nextAll().toggle();
-          changeIcon(this, treeObj);
+    ////一级菜单添加展开收缩功能
+      var topNode = $("#top_node");
+      topNode.on("click", function(){
+          $(topNode).nextAll().toggle();
+          changeIcon(topNode, treeObj);
         });
-
+      setImgCollpse(topNode, treeObj);
+     //二级菜单添加加载部门信息
       $(".li_2").on("click",(function(){
         treeObj.getList( treeObj.q.department+$(this).text(),
                         this,
@@ -94,13 +96,16 @@
                         );
         $(this).find("img").first().attr('src', treeObj.minusImage)
                    .next().attr('src', treeObj.folderopenImage);
+      //加载一次后取消绑定，防止多次加载
         $(this).unbind();
-        
-        $(this).find('a:first').on('click', function(){
+        //二级菜单添加展开收缩功能
+        var secondNode = $(this).find('a:first');
+        secondNode.on('click', function(){
           $(this).nextAll().toggle();
           changeIcon(this, treeObj);
         });
-        //console.log($(this).find("ul li"))
+        setImgCollpse(secondNode, treeObj);
+        //三级菜单添加加载人员信息
         $(this).find(".li_3").on("click", function(){
           //console.log(treeObj.q.displayName+$(this).text())
           treeObj.getList( treeObj.q.displayName+$(this).text(),
@@ -110,15 +115,18 @@
                         );
           $(this).find("img").first().attr('src', treeObj.minusImage)
                    .next().attr('src', treeObj.folderopenImage);
+        //加载一次人员信息后取消绑定，防止多次加载
           $(this).unbind();
-
-          $(this).find('a:first').on('click', function(){
+          //三级菜单添加展开收缩功能
+          var thirdNode = $(this).find('a:first');
+          thirdNode.on('click', function(){
             $(this).nextAll().toggle();
             changeIcon(this, treeObj);
           });
-
+          setImgCollpse(thirdNode, treeObj);
+        //点击人员图标，显示配置信息
           $(this).find(".li_4").on("click", function(){
-            console.log($(this).text())
+            //console.log($(this).text())
             treeObj.showInfo(treeObj.q.pcinfo+$(this).text(), $("#pcinfo-list"));
           });
         })
@@ -133,6 +141,13 @@
             $(obj).prev().attr('src', imgObj.foldercloseImage)
                    .prev().attr('src', imgObj.plusImage);
           }
+      }
+
+      function setImgCollpse(that, treeObj){
+          that.prev().prev().on("click", function(){
+            $(that).nextAll().toggle();
+            changeIcon(that, treeObj);
+        });
       }
 
     })
