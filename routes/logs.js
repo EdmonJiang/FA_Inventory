@@ -19,7 +19,7 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-  var today = new Date();
+  var today = new Date(Date.now());
   today.setHours(0,0,0,0);
 
   Pclog.find({created:{$gte: today}})
