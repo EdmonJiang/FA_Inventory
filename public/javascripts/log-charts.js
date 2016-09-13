@@ -3,7 +3,7 @@ $(function(){
     var btnrefresh = $('#refresh-log').click(function(){
         $('#log-list').html('');
         $.post('/logs/', function(data){
-            //console.log(data);
+            console.log(data);
             if(data){
                 createTable($('#log-list')[0], data, addIcon);
                 $('#log-count').text(data.length);

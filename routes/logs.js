@@ -20,12 +20,13 @@ router.get('/', function(req, res, next){
 
 router.post('/', function(req, res, next){
   var today = new Date();
-  today.setHours(0,0,0,0);
+  today.setHours(8,0,0,0);
 //console.log(today);
-  Pclog.find({created:{$gte: today}})
+  Pclog.find({created:{$gt: today}})
     .exec(function(err, docs){
       if(err){res.send('error');
               return;}
+//console.log(docs);
       var data = docs.map(function(item){
         return {_id:{ DateTime: moment(item.created).format("YYYY-MM-DD HH:mm:ss"),
                       ComputerName: item.ComputerName,
