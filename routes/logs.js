@@ -8,7 +8,7 @@ router.get('/', function(req, res, next){
 
   var weekago = new Date(Date.now() - 7*24*60*60*1000);
   var weekagoDay = new Date(weekago.getFullYear()+"-"+(weekago.getMonth()+1)+"-"+weekago.getDate());
-
+console.log(weekagoDay)
   Pclog.aggregate([{$match:{created:{$gt:weekagoDay}}},{$group:{_id:{month:{$month:"$created"},day:{$dayOfMonth:"$created"}, action:"$action"},total:{$sum:1}}}])
        .exec(function(err, docs){
          if(err){console.log(err)}
@@ -18,7 +18,7 @@ router.get('/', function(req, res, next){
 })
 
 router.post('/', function(req, res, next){
-  var weekago = new Date(Date.now() - 7*24*60*60*1000);
+  var weekago = new Date(Date.now());
   var weekagoDay = new Date(weekago.getFullYear()+"-"+(weekago.getMonth()+1)+"-"+weekago.getDate());
     // .where('created').gt(moment(Date.now()).format('YYYY-MM-DD'))
   Pclog.find({})
