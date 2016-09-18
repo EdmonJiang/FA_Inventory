@@ -44,7 +44,8 @@ router.get('/', function(req, res, next) {
         keyword: req.query.q,
         sort: sort,
         qstring: qstring,
-        totalPage: count===0?1:Math.ceil(count/10)
+        totalPage: count===0?1:Math.ceil(count/10),
+        title: "Home"
       });
     })
   })

@@ -22,7 +22,8 @@ router.get('/', function(req, res, next){
 
       return {filename:item.split('/').slice(-1),
               created:fs.statSync(item).ctime,
-              size: filesize};
+              size: filesize
+              };
       }
     );
 
@@ -33,7 +34,8 @@ router.get('/', function(req, res, next){
       res.render('reports', {
       reports: reports,
       companies: docs,
-      items: Object.keys(Pcinfo.schema.paths)
+      items: Object.keys(Pcinfo.schema.paths),
+      title: "Charts"
     });
   })
 

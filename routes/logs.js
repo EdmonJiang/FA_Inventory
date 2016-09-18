@@ -13,7 +13,7 @@ router.get('/', function(req, res, next){
   Pclog.aggregate([{$match:{created:{$gte:weekago}}},{$group:{_id:{month:{$month:"$created"},day:{$dayOfMonth:"$created"}, action:"$action"},total:{$sum:1}}}])
        .exec(function(err, docs){
          if(err){console.log(err)}
-         res.render('logs', {docs: JSON.stringify(docs)});
+         res.render('logs', {docs: JSON.stringify(docs),title: "Logs"});
        })
    
 })

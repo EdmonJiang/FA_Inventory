@@ -24,7 +24,8 @@ router.get('/', function(req, res, next){
                   oss: oss,
                   cpus: cpus,
                   rams: rams,
-                  groups: Object.keys(Pcinfo.schema.paths)
+                  groups: Object.keys(Pcinfo.schema.paths),
+                  title: "Statistics"
                 });
             })
           })

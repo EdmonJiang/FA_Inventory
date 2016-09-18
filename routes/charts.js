@@ -8,6 +8,7 @@ router.get('/', function(req, res, next){
   Pcinfo.find().distinct('company',function(err, docs){
       res.render('charts', {
           companies: docs,
+          title: "Charts"
       });
   })
 })
