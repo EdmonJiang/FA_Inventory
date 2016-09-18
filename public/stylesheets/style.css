@@ -65,3 +65,41 @@ body {
 .pcinfo-div{
   margin-top: 30px;
 }
+#top_node{
+	font-size: 15px;
+}
+.dhtmlgoodies_tree{
+	padding: 10px;
+}
+#orgtree{
+	margin-left: -15px;
+}
+.dhtmlgoodies_tree a{
+	color:#000;
+	text-decoration: none;
+	/*font-family:arial;
+	font-size:0.8em;*/
+}
+.dhtmlgoodies_tree a:hover{
+	color: #237fce;
+}
+.dhtmlgoodies_tree ul{	/* Sub menu groups */
+	margin-left:20px;	/* Left spacing */
+	padding-left:0px;
+	display:none;	/* Initially hide sub nodes */
+}
+
+.dhtmlgoodies_tree li{	/* Nodes */
+	list-style-type:none;
+	vertical-align:middle;
+	
+}
+.dhtmlgoodies_tree li a a{	/* Node links */
+	color:#000;
+	text-decoration:none;
+	font-family:arial;
+	font-size:0.8em;
+	padding-left:1px;
+	line-height:13px;
+	margin-left:2px;
+}
