@@ -3,7 +3,7 @@ $(function(){
     var btnrefresh = $('#refresh-log').click(function(){
         $('#log-list').html('');
         $.post('/logs/', function(data){
-            console.log(data);
+            //console.log(data);
             if(data){
                 createTable($('#log-list')[0], data, addIcon);
                 $('#log-count').text(data.length);
@@ -38,25 +38,25 @@ $(function(){
             }
         }
     }
-    function dateArray(){
+    function dateArray(days){
         var myDate = new Date(); //获取今天日期
-        myDate.setDate(myDate.getDate() - 6);
+        myDate.setDate(myDate.getDate() - days +1);
         var dArray = []; 
 
-        for (var i = 0; i < 7; i++) {
+        for (var i = 0; i < days; i++) {
             dArray.push((myDate.getMonth()+1)+"-"+myDate.getDate());
             myDate.setDate(myDate.getDate() + 1);
         }
         return dArray;
     }
-    drawChart(groupLog);
-    function drawChart(data){
+    drawChart(groupLog, 31);
+    function drawChart(data, days){
         if(data){
-            var arrAdd = new Array(7),
-                arrDelete = new Array(7),
-                arrUpdate = new Array(7),
-                xArray = dateArray();
-            for(var i=0;i<7;i++){
+            var arrAdd = new Array(days),
+                arrDelete = new Array(days),
+                arrUpdate = new Array(days),
+                xArray = dateArray(days);
+            for(var i=0;i<days;i++){
                 arrAdd[i] = 0;
                 arrDelete[i] = 0;
                 arrUpdate[i] = 0;
@@ -79,19 +79,14 @@ $(function(){
             return;
         }
 
-        // var adds = logs.map(function(item){
-        //     return item.
-        // })
+
     // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init($('#chart')[0]);
         
-        // var yseries = data.map(function(item){
-        //     return item.total
-        // })
         // 指定图表的配置项和数据
         var option = {
             title: {
-                text: 'The lastest week\'s logs'
+                text: 'The lastest month\'s logs'
             },
             tooltip: {},
             legend: {

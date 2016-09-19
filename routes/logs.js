@@ -6,7 +6,7 @@ var express = require('express'),
 
 router.get('/', function(req, res, next){
 
-  var weekago = new Date(Date.now() - 6*24*60*60*1000);
+  var weekago = new Date(Date.now() - 30*24*60*60*1000);
   //var weekagoDay = new Date(weekago.getFullYear()+"-"+(weekago.getMonth()+1)+"-"+weekago.getDate());
   weekago.setHours(0,0,0,0);
 
