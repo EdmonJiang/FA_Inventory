@@ -35,7 +35,7 @@ router.get('/', function(req, res, next){
       reports: reports,
       companies: docs,
       items: Object.keys(Pcinfo.schema.paths),
-      title: "Charts"
+      title: "Reports"
     });
   })
 
