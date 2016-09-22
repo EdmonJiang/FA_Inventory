@@ -23,3 +23,10 @@ ul.nav.nav-tabs
         a(href='/logs/')
             span.glyphicon.glyphicon-floppy-disk
             |&nbsp;Logs
+    .loguser-text
+        if user
+            li
+                span= user.email
+                    |&nbsp;
+                a(href='/users/logout')
+                    |Logout

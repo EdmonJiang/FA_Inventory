@@ -1,0 +1,68 @@
+extends layout.jade
+
+block content
+    .container
+        .login-center
+            .login-title
+                h1 User Login
+            .login-content
+                form#loginform(action="/users/login", method="post")
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-user
+                            label.sr-only(for="email") Email address
+                            input.form-control(id="email",type="email",name="email", placeholder="Enter your email address")
+                    .form-group
+                        .input-group
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-lock
+                            label.sr-only(for="password") Password
+                            input.form-control(id="password",type="password",name="password", placeholder="Enter your windows password")
+
+                    button.btn.btn-primary#btnsubmit(type="button") Login
+                    span.popover-content.alert.alert-danger.pull-right#error-text(style={"display":"none"})
+                    != messages()
+
+    script(src="/javascripts/jsencrypt.min.js")
+    script.
+        $(function(){
+            var pubkey = '-----BEGIN PUBLIC KEY-----MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMEmot3jW9iY/3JWOdwwiD1dU7P1Bz93vbZLIkZmbxp7Kr0IIX9Q2x3MAvv3TnGgfwOC4TZJ8EQGt+h6RzkxpMMCAwEAAQ==-----END PUBLIC KEY-----';
+            function encryptrsa(str, pubkey) {
+                var encrypt = new JSEncrypt();
+                encrypt.setPublicKey(pubkey);
+                var encrypted = encrypt.encrypt(str);
+                return encrypted;
+            }
+            function valpwd(pwd){
+                return /((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])|(?=.*[A-Z])(?=.*[a-z])(?=.*[^a-zA-Z0-9])|(?=.*[a-z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])|(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])).{8,30}/.test(pwd);
+            }
+            function valemail(email){
+                return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email);
+            }
+
+            $("#btnsubmit").on("click", function(){
+                var pwd = $('#password').val();
+                var email = $('#email').val();
+                $('#messages').hide();
+                if(!valemail(email)){
+                    $('#error-text')
+                        .text('you probably input a wrong email.')
+                        .fadeIn('fast', function(){
+                            $(this).delay(1000).fadeOut('slow');
+                        });
+                    return;
+                }else if(!valpwd(pwd)){
+                    $('#error-text')
+                        .text('you probably input a wrong password.')
+                        .fadeIn('fast', function(){
+                            $(this).delay(1000).fadeOut('slow');
+                        });
+                    return;
+                }
+                else{
+                    $('#password').val(encryptrsa(pwd,pubkey));
+                    $('#loginform').submit();
+                }
+            })
+        })

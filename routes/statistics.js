@@ -2,6 +2,8 @@ var express = require('express'),
     router = express.Router(),
     Pcinfo = require('../models/pcinfo.js');
 /* GET statistics page. */
+var auth = require('./auth');
+router.all('/', auth.requireLogin);
 
 router.get('/', function(req, res, next){
 

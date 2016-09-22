@@ -4,6 +4,8 @@ var express = require('express'),
     moment = require('moment'),
     Pclog = require('../models/pclog.js');
 /* GET statistics page. */
+var auth = require('./auth');
+router.all('/', auth.requireLogin);
 
 router.get('/', function(req, res, next){
 

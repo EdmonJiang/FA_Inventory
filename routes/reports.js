@@ -6,6 +6,8 @@ var express = require('express'),
     fs = require('fs'),
     moment = require('moment');
 /* GET reports page. */
+var auth = require('./auth');
+router.all('/', auth.requireLogin);
 
 router.get('/', function(req, res, next){
   var reports = glob.sync('./public/reports/*',{nodir:true}).map(

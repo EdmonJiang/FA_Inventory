@@ -9,8 +9,12 @@ const objSort = {pc:"ComputerName",pcd:"-ComputerName",
                ram:"RAM",ramd:"-RAM"};
 
 /* GET home page. */
+var auth = require('./auth');
+router.all('/', auth.requireLogin);
+
 router.get('/', function(req, res, next) {
-  
+  //console.log(req.session.user)
+  // console.log('decrypt pwd: '+ decrypt(req.session.user.password,'safe_pass_secret'))
   var currentPage = 1;
   var q = {};
   var d = {};

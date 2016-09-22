@@ -5,8 +5,12 @@ var express = require('express'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    session = require('express-session'),
+    session = require('express-session'),
+    flash = require('connect-flash'),
     moment = require('moment'),
     mongoose = require('mongoose'),
+    MongoStore = require('connect-mongo')(session),
     Pclog = require('./models/pclog.js'),
     configDB = require('./config/database.js');
 mongoose.Promise = global.Promise = require('bluebird');
@@ -35,12 +39,26 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+    secret: 'safe_session_cat',
+    resave: true,
+    rolling: true,
+    saveUninitialized: false,
+    cookie: {secure: false, maxAge: 900000},
+    store: new MongoStore({ url: configDB.uri })
+}));
+app.use(flash());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function(req,res,next){
   app.locals.currentUrl = req.path;
   app.locals.moment = moment;
-  //res.locals.rootFolder = rootFolder;
+  res.locals.messages = require('express-messages')(req, res);
+  if(req.session & req.session.user){
+    app.locals.user = req.session.user;
+  }
+  console.log(app.locals.user);
   next();
 });
 
@@ -63,15 +81,15 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-// if (app.get('env') === 'development') {
-//   app.use(function(err, req, res, next) {
-//     res.status(err.status || 500);
-//     res.render('error', {
-//       message: err.message,
-//       error: err
-//     });
-//   });
-// }
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
 
 // production error handler
 // no stacktraces leaked to user

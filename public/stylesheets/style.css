@@ -103,3 +103,30 @@ body {
 	line-height:13px;
 	margin-left:2px;
 }
+.login-center{
+    margin: 100px auto;
+    width: 400px;
+}
+.login-title{
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    overflow: hidden;
+    font-weight: normal;
+    background-color: #428bca;
+    border-radius: 10px 10px 0px 0px;
+}
+.login-content{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 40px;
+    border-radius: 0px 0px 10px 10px;
+}
+.loguser-text{
+    margin: 10px;
+    float: right;
+}
+#messages{
+  display: inline-block;
+  color: #a94442;
+}
