@@ -10,9 +10,8 @@ const objSort = {pc:"ComputerName",pcd:"-ComputerName",
 
 /* GET home page. */
 var auth = require('./auth');
-router.all('/', auth.requireLogin);
 
-router.get('/', function(req, res, next) {
+router.get('/', auth.requireLogin, function(req, res, next) {
   //console.log(req.session.user)
   // console.log('decrypt pwd: '+ decrypt(req.session.user.password,'safe_pass_secret'))
   var currentPage = 1;
@@ -93,7 +92,7 @@ router.post('/', function(req, res, next){
 
 });
 
-router.get('/details/:cn', function(req, res, next){
+router.get('/details/:cn', auth.requireLogin, function(req, res, next){
   var computer = {};
   
   if(req.params.cn){
@@ -119,7 +118,7 @@ router.get('/details/:cn', function(req, res, next){
   }
 })
 
-router.post('/details/:cn', function(req, res, next){
+router.post('/details/:cn', auth.requireLogin, function(req, res, next){
   var objpc = {};
 // console.log(req.body)
   if(req.params.cn){
@@ -160,7 +159,7 @@ router.post('/details/:cn', function(req, res, next){
 
 })
 
-router.get('/delete/:cn', function(req, res, next){
+router.get('/delete/:cn', auth.requireLogin, function(req, res, next){
   
   if(req.params.cn){
     var computer = {};
