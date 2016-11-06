@@ -8,7 +8,7 @@ router.post('/', function(req, res, next){
         SN.findById(req.body.sn).exec(function(err,docs){
             if(err || docs===null){
                 // console.log('failed')
-                res.json({error:'sn not found'})
+                res.json({error:'The SN was not found'})
                 return;
             }else{
                 // console.log('success')
@@ -23,7 +23,7 @@ router.post('/', function(req, res, next){
             }
         })
     }else{
-        res.json({error:'miss sn parameter'})
+        res.json({error:'missed sn parameter'})
     }
 })
 
