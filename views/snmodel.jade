@@ -1,0 +1,12 @@
+#SN-Modal.modal.fade(tabindex="-1",role="dialog",aria-labelledby="myModalLabel",aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type="button",data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only Close
+        h4#myModalLabel.modal-title Warranty Details
+      .modal-body
+        table#sn-table.table.table-striped.table-hover
+      .modal-footer
+        button.btn.btn-default(type="button",data-dismiss="modal") Close

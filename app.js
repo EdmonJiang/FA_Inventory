@@ -18,7 +18,8 @@ var routes = require('./routes/index'),
     charts = require('./routes/charts'),
     logs = require('./routes/logs'),
     organization = require('./routes/organization'),
-    users = require('./routes/users');
+    users = require('./routes/users'),
+    servicetag = require('./routes/servicetag');
 
 var app = express();
 
@@ -50,6 +51,7 @@ app.use('/statistics', statistics);
 app.use('/charts', charts);
 app.use('/logs', logs);
 app.use('/organization', organization);
+app.use('/servicetag', servicetag);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

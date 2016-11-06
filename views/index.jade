@@ -43,21 +43,19 @@ block content
           td= pcinfo.displayName
           td= pcinfo.LogonName
           td= pcinfo.Model
-          td= pcinfo.SN
+          td
+            a.servicetag(href="javascript:void(0)")= pcinfo.SN
           td= pcinfo.OS
           td= pcinfo.RAM
           td= pcinfo.HDD
 
     ul.sync-pagination.pagination-sm
     div.page-count: span COUNT: #{count}
+  include snmodel.jade
 
+  script(src='/javascripts/createTable.js')
+  script(src='/javascripts/index.js')
   script.
-    $(function(){
-      txtSearch = $('#txtSearch');
-      txtSearch.focus();
-      txtSearch.val(txtSearch.val());
-    });
-
     $('.sync-pagination').twbsPagination({
       totalPages: #{totalPage},
       visiblePages: 10,
@@ -67,14 +65,3 @@ block content
         //$('#page-content').text('Page ' + page);
       }
     });
-    
-    function onSearch(){
-      keyword = $('#txtSearch').val().trim();
-      console.log(keyword);
-      if(keyword===''){
-        //$('#txtSearch').removeAttr('name');
-        window.location.href = '/';
-        return false;
-      };
-      return true;
-    }
