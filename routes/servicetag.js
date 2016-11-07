@@ -25,7 +25,9 @@ router.post('/', function(req, res, next){
                 else{
                     res.json({error:'No warranty infomation found'});
                     SN.remove({_id: req.body.sn}, function (err){
-                        console.log("failed to remove empty warranty record.")
+                        if(err){
+                            console.log("failed to remove empty warranty record.")
+                        }
                     });
                 }
             }
