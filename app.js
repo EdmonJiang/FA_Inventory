@@ -12,7 +12,6 @@ var express = require('express'),
     api = require('./dell/api.js');
 mongoose.Promise = global.Promise = require('bluebird');
 mongoose.connect(configDB.uri);
-api.scheduleSync();
 
 var routes = require('./routes/index'),
     reports = require('./routes/reports'),
