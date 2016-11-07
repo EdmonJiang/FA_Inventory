@@ -102,7 +102,7 @@ router.get('/details/:cn', function(req, res, next){
         console.log('err');
         res.render('404', {error:{status:404,message: 'The computer does not exist.'}})
       }else{
-        console.log(details);
+        //console.log(details);
         var objpc = {};
         for(var prop in details._doc){
           if(details._doc.hasOwnProperty(prop)){
