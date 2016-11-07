@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+SN = require('./sn.js');
 
 var pcSchema = mongoose.Schema({
     ComputerName: {type: String, required: true},
@@ -6,7 +7,7 @@ var pcSchema = mongoose.Schema({
     Domain: {type: String, default: ''},
     Vendor: {type: String, default: ''},
     Model: {type: String, default: ''},
-    SN: {type: String, default: ''},
+    SN: {type: String, default: '', ref: 'SN'},
     OS: {type: String, default: ''},
     CPU: {type: String, default: ''},
     RAM: {type: String, default: ''},

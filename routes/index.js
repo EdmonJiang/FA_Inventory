@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     Pcinfo = require('../models/pcinfo.js'),
     Recycle = require('../models/recycle.js'),
-    Pclog = require('../models/pclog.js');
+    Pclog = require('../models/pclog.js'),
+    SN = require('../models/sn.js');
 
 const objSort = {pc:"ComputerName",pcd:"-ComputerName",
                name:"displayName",named:"-displayName",
@@ -95,12 +96,13 @@ router.get('/details/:cn', function(req, res, next){
   if(req.params.cn){
 
     computer.ComputerName = req.params.cn;
-    Pcinfo.findOne(computer, function(err, details){
-
+    //Pcinfo.findOne(computer, function(err, details){
+    Pcinfo.findOne(computer).exec(function(err, details){
       if (err || !details){
-        
+        console.log('err');
         res.render('404', {error:{status:404,message: 'The computer does not exist.'}})
       }else{
+        console.log(details);
         var objpc = {};
         for(var prop in details._doc){
           if(details._doc.hasOwnProperty(prop)){

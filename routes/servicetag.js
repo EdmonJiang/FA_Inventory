@@ -15,7 +15,7 @@ router.post('/', function(req, res, next){
                 var data = docs.AssetEntitlementData.map(function(item){
                 return {_id:{ Service: item.ServiceLevelDescription,
                               StartDate: moment(item.StartDate).format("YYYY-MM-DD"),
-                              EndDate: moment(item.StartDate).format("YYYY-MM-DD")
+                              EndDate: moment(item.EndDate).format("YYYY-MM-DD")
                             }
                         }
                 })

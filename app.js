@@ -8,9 +8,11 @@ var express = require('express'),
     moment = require('moment'),
     mongoose = require('mongoose'),
     Pclog = require('./models/pclog.js'),
-    configDB = require('./config/database.js');
+    configDB = require('./config/database.js'),
+    api = require('./dell/api.js');
 mongoose.Promise = global.Promise = require('bluebird');
 mongoose.connect(configDB.uri);
+api.scheduleSync();
 
 var routes = require('./routes/index'),
     reports = require('./routes/reports'),
