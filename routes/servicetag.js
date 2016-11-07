@@ -12,14 +12,19 @@ router.post('/', function(req, res, next){
                 return;
             }else{
                 // console.log('success')
-                var data = docs.AssetEntitlementData.map(function(item){
-                return {_id:{ Service: item.ServiceLevelDescription,
-                              StartDate: moment(item.StartDate).format("YYYY-MM-DD"),
-                              EndDate: moment(item.EndDate).format("YYYY-MM-DD")
+                if(docs.AssetEntitlementData && docs.AssetEntitlementData.length>0){
+                    var data = docs.AssetEntitlementData.map(function(item){
+                    return {_id:{ Service: item.ServiceLevelDescription,
+                                StartDate: moment(item.StartDate).format("YYYY-MM-DD"),
+                                EndDate: moment(item.EndDate).format("YYYY-MM-DD")
+                                }
                             }
-                        }
-                })
-                res.json(data);
+                    })
+                    res.json(data);
+                }
+                else{
+                    res.json({error:'No warranty infomation found'})
+                }
             }
         })
     }else{
