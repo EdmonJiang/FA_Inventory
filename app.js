@@ -8,8 +8,8 @@ var express = require('express'),
     moment = require('moment'),
     mongoose = require('mongoose'),
     Pclog = require('./models/pclog.js'),
-    configDB = require('./config/database.js'),
-    api = require('./dell/api.js');
+    configDB = require('./config/database.js');
+    
 mongoose.Promise = global.Promise = require('bluebird');
 mongoose.connect(configDB.uri);
 
