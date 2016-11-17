@@ -1,4 +1,5 @@
-function createTable(divTable, data, callback){
+(function(){
+    window.createTable = function (divTable, data, callback){
 
         if(data.length>0){
             //data.sort(function(a,b){return a.total - b.total});
@@ -39,4 +40,5 @@ function createTable(divTable, data, callback){
             divTable.appendChild(tbl_head);
             divTable.appendChild(tbl_body);
         }
-}
+    }
+})()
