@@ -5,33 +5,29 @@ var express = require('express'),
 
 router.get('/', function(req, res, next){
 
-  Pcinfo.find().distinct('company',function(err, companies){
-    if(err) return next(err);
-    Pcinfo.find().distinct('department',function(err, departments){
-     if(err) return next(err);
-      Pcinfo.find().distinct('Vendor',function(err, vendors){
-        if(err) return next(err);
-        Pcinfo.find().distinct('OS',function(err, oss){
-          if(err) return next(err);
-          Pcinfo.find().distinct('CPU',function(err, cpus){
-            if(err) return next(err);
-            Pcinfo.find().distinct('RAM',function(err, rams){
-              if(err) return next(err);
-                res.render('statistics', {
-                  companies: companies,
-                  departments: departments,
-                  vendors: vendors,
-                  oss: oss,
-                  cpus: cpus,
-                  rams: rams,
+  var query_company = Pcinfo.find().distinct('company'),
+      query_department = Pcinfo.find().distinct('department'),
+      query_vendor = Pcinfo.find().distinct('Vendor'),
+      query_os = Pcinfo.find().distinct('OS'),
+      query_cpu = Pcinfo.find().distinct('CPU'),
+      query_ram = Pcinfo.find().distinct('RAM');
+
+  Promise.all([query_company, query_department, query_vendor, query_os, query_cpu, query_ram])
+    .then(function(values){
+      res.render('statistics', {
+                  companies: values[0],
+                  departments: values[1],
+                  vendors: values[2],
+                  oss: values[3],
+                  cpus: values[4],
+                  rams: values[5],
                   groups: Object.keys(Pcinfo.schema.paths),
                   title: "Statistics"
-                });
-            })
-          })
-        })
-      })
     })
+
+  }, function(err){
+      return next(err)
+
   })
 
 })
