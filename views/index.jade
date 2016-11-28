@@ -41,7 +41,8 @@ block content
           td
             a(href='/details/'+pcinfo.ComputerName,target='_blank')= pcinfo.ComputerName
           td= pcinfo.displayName
-          td= pcinfo.LogonName
+          td
+            a.samaccount(href="javascript:void(0)")= pcinfo.LogonName
           td= pcinfo.Model
           td
             a.servicetag(href="javascript:void(0)")= pcinfo.SN
