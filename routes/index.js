@@ -159,10 +159,18 @@ router.post('/details/:cn', function(req, res, next){
 })
 
 router.get('/delete/:cn', function(req, res, next){
-  
+
+
   if(req.params.cn){
     var computer = {};
     computer.ComputerName = req.params.cn;
+
+    var ip = req.ip;
+    if(!ip.match('127.0.0.1')){
+      computer.status = 'You don\'t have sufficent permission to delete the computer!';
+      res.render('details', {computer: computer});
+      return;
+    }
 
     Pcinfo.findOneAndRemove(computer).exec(function(err, pcinfo){
       if (err || !pcinfo){
