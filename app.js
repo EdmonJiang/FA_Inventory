@@ -23,7 +23,7 @@ var routes = require('./routes/index'),
     servicetag = require('./routes/servicetag');
 
 var app = express();
-
+app.enable('trust proxy');
 //var rootFolder = __dirname;
 
 // view engine setup
