@@ -13,14 +13,14 @@ router.get('/', function(req, res, next){
       query_ram = Pcinfo.find().distinct('RAM');
 
   Promise.all([query_company, query_department, query_vendor, query_os, query_cpu, query_ram])
-    .then(function(values){
+    .spread(function(company, department, vendor, os, cpu, ram){
       res.render('statistics', {
-                  companies: values[0],
-                  departments: values[1],
-                  vendors: values[2],
-                  oss: values[3],
-                  cpus: values[4],
-                  rams: values[5],
+                  companies: company,
+                  departments: department,
+                  vendors: vendor,
+                  oss: os,
+                  cpus: cpu,
+                  rams: ram,
                   groups: Object.keys(Pcinfo.schema.paths),
                   title: "Statistics"
     })
