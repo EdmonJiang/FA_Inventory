@@ -35,7 +35,7 @@ var pcSchema = mongoose.Schema({
         type: Date,
         default: new Date
     }
-    },{collection: 'pcinfo', toObject: {getters:true,retainKeyOrder:true,versionKey:false}});
+    },{collection: 'pcinfo', toObject: {getters:true}});
 
 if (!pcSchema.options.toObject) pcSchema.options.toObject = {};
 
