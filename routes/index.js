@@ -32,6 +32,27 @@ router.get('/', function(req, res, next) {
     qstring = '&q='+req.query.q;
   }
 
+  // var query_total = Pcinfo.find({}).or([q,d]).count();
+  // var query_pcinfos = Pcinfo.find({}).or([q,d])
+  //     .sort(objSort[sort]).skip((currentPage-1)*10).limit(10)
+  //     .exec();
+
+  // Promise.all([query_total,query_pcinfos])
+  //   .spread(function(count, pcinfos) {
+  //     res.render('index', {
+  //       pcinfos: pcinfos, 
+  //       currentPage: currentPage,
+  //       count: count,
+  //       keyword: req.query.q,
+  //       sort: sort,
+  //       qstring: qstring,
+  //       totalPage: count===0?1:Math.ceil(count/10),
+  //       title: "Home"
+  //     })
+  //   }, function(err) {
+  //     return next(new Error('No Data Found!'));
+  //   })
+
   Pcinfo.find({}).or([q,d]).count(function(err, count){
     Pcinfo.find({}).or([q,d])
       .sort(objSort[sort]).skip((currentPage-1)*10).limit(10)
@@ -103,14 +124,7 @@ router.get('/details/:cn', function(req, res, next){
         res.render('404', {error:{status:404,message: 'The computer does not exist.'}})
       }else{
         //console.log(details);
-        var objpc = {};
-        for(var prop in details._doc){
-          if(details._doc.hasOwnProperty(prop)){
-            objpc[prop]=details._doc[prop];
-          }
-        }
-        //delete objpc._id;
-        res.render('details', {computer: objpc});
+        res.render('details', {computer: details.toObject({ hide: '_id',retainKeyOrder:true })});
       };
       
     })

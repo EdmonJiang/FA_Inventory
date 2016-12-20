@@ -31,10 +31,13 @@ router.get('/', function(req, res, next){
       // if(err){
       //   return next(new Error('Can not find company categaries!'));
       // }
+      var paths = Pcinfo.schema.paths;
+      delete paths._id;
+      delete paths.__v;
       res.render('reports', {
       reports: reports,
       companies: docs,
-      items: Object.keys(Pcinfo.schema.paths),
+      items: Object.keys(paths),
       title: "Reports"
     });
   })

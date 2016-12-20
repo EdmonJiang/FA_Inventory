@@ -35,6 +35,17 @@ var pcSchema = mongoose.Schema({
         type: Date,
         default: new Date
     }
-    },{collection: 'pcinfo'});
+    },{collection: 'pcinfo', toObject: {getters:true,retainKeyOrder:true,versionKey:false}});
+
+if (!pcSchema.options.toObject) pcSchema.options.toObject = {};
+
+pcSchema.options.toObject.transform = function (doc, ret, options) {
+  if (options.hide) {
+    options.hide.split(' ').forEach(function (prop) {
+      delete ret[prop];
+    });
+  }
+  return ret;
+}
 
 module.exports = mongoose.model('Pcinfo', pcSchema);
