@@ -46,7 +46,7 @@ $(function(){
               }else{
                 $('#sn-table').html('');
                 var keys = Object.keys(data);
-
+                keys.splice(keys.indexOf('memberOf', 1));
                 keys.forEach(function(item) {
                   $('#sn-table').append("<tr><th>"+item+"</th><td style='word-break: break-all;'>"+data[item]+"</td></tr>")
                 })
